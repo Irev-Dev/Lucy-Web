@@ -27,6 +27,8 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: left;
+  background: url("include/metalTile.png") repeat fixed;
+  background-size: 200px 200px;
 }
 
 img { 
@@ -63,10 +65,11 @@ p {
 header {
   height: 270px;
   background: url("include/oslope5.svg") bottom left no-repeat,
-              linear-gradient(to bottom, #00000000, #00000099),
-              url("include/lucy1.png") top left no-repeat;
-  background-size: 100% 70px, cover, cover;
+              url("include/LucyHero1.png") top left no-repeat,
+              radial-gradient(#000000a8, #000000ff 95%);
+  background-size: 100% 100px, cover, cover;
 }
+
 
 .title {
   width: 45%;
@@ -94,10 +97,6 @@ header {
 
 .vid-pitch-wrapper {
   background: #e16a36;
-  /*background: url("include/slope5.svg") top left no-repeat,
-  url("include/slope.svg") bottom left no-repeat,
-              #e16a36;
-  background-size: 100% 70px, 100% 70px;*/
   padding-bottom: 25px;
 }
 
@@ -162,17 +161,13 @@ header {
 /* orthognal image and call to action wrapper*/
 .bigorthwrap {
   background: url("include/oslope.svg") top left no-repeat,
-              radial-gradient(#000000a8, #000000ff 95%),
-              url("include/metalTile.png") repeat;
-              /*url("include/scratchedMetal.jpg") center center repeat;*/
-  background-size:100% 100px ,cover, 200px 200px;
+              radial-gradient(#000000a8, #000000ff 95%);
+  background-size:100% 100px ,cover;
 }
 
 /* feature image */
 .feat-img {
-  background: /*linear-gradient(to bottom, #00000000 90%, #121112ff ),
-              linear-gradient(to bottom, #121112ff , #00000000 8%),*/
-              url("include/lucy5.png") center center no-repeat;
+  background: url("include/lucy5.png") center center no-repeat;
   background-size: cover;
   height: 270px;
 }
@@ -255,8 +250,18 @@ header {
   padding-top: 60px;
 }
 
-.thecta2 {
+.hr {
+  width: 90%; 
+  max-width: 1200px;
+  margin: 0 auto; 
+  height: 1px; 
+  background-color: #eaeaea; 
+}
+
+.thecta2, footer  {
   padding-top: 50px;
+  background: radial-gradient(#000000a8, #000000ff 95%);
+  background-size:cover;
 }
 
 .cta2 {
@@ -327,9 +332,12 @@ footer p {
 }
 
 footer .flexicons {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
 }
 
