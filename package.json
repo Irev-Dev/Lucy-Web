@@ -1,0 +1,19 @@
+{
+  "name": "lucy-web",
+  "version": "1.0.0",
+  "description": "Lucy Server code",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrhut10/Lucy-Web.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrhut10/Lucy-Web/issues"
+  },
+  "homepage": "https://github.com/mrhut10/Lucy-Web#readme"
+}
