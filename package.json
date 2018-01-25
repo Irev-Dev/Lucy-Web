@@ -4,7 +4,10 @@
   "description": "Lucy Server code",
   "main": "server/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle-client": "parcel build -d server/client/public/dist server/client/client.html",
+    "start-server": "echo \"test server\"",
+    "start": "npm run bundle-client && npm run start-server"
   },
   "repository": {
     "type": "git",
