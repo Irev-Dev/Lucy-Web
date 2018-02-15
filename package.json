@@ -2,12 +2,13 @@
   "name": "lucy-web",
   "version": "1.0.0",
   "description": "Lucy Server code",
-  "main": "server/server.js",
+  "main": "server/start.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon ./server/start.js --ignore public/",
-    "assets": "parcel build -d server/client/public/dist server/client/client.html",
-    "start": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name"
+    "watch-server": "nodemon ./server/start.js --ignore public/",
+    "build": "parcel build -d server/client/dist server/client/index.html --public-url ./",
+    "start": "node ./server/start.js",
+    "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name"
   },
   "repository": {
     "type": "git",
@@ -19,18 +20,33 @@
     "url": "https://github.com/mrhut10/Lucy-Web/issues"
   },
   "homepage": "https://github.com/mrhut10/Lucy-Web#readme",
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
   "dependencies": {
+    "axios": "^0.17.1",
     "body-parser": "~1.18.2",
+    "cloudinary": "^1.10.0",
+    "cloudinary-core": "^2.5.0",
     "concurrently": "^3.5.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.6.1",
     "express": "~4.15.5",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.0.0",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
     "nodemon": "^1.14.11",
+    "react": "^16.2.0",
     "serve-favicon": "~2.4.5"
   },
   "devDependencies": {
+    "babel": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
