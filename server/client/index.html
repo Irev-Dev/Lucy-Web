@@ -5,6 +5,7 @@
         <title>LucyKwad</title>
         <link rel="stylesheet" href="normalise.css">
         <link rel="stylesheet" href="style.css">
+        
         <!-- 
         <script src="js/uikit.min.js"></script>
         <script src="js/uikit-icons.min.js"></script>
@@ -59,8 +60,10 @@
 
         <!-- feature cards -->
         <section class="lite featC">
-            <img class="lift" src="include/card1.png" alt="">
-            <img class="drag" src="include/card2.png" alt="">
+            <!-- have moved them over to CDN and inserting them in client.js
+                <img class="lift" src="include/card1.png" alt="">
+                <img class="drag" src="include/card2.png" alt="">
+            -->
         </section>
 
         
@@ -86,36 +89,8 @@
         <h3>OPEN SOURCE DESIGN</h3>
         <a href ="https://github.com/Irev-Dev/Lucy" >github.com/Irev-Dev/Lucy</a>
         <div class="flexicons">
-            <div>
-                <img class="" src="include/SCAD3.png" alt="OpenScad logo">
-                <h4>OpenSCAD</h4>
-            </div>
-            <div>
-                <img class="" src="include/Blender2.png" alt="Blender logo">
-                <h4>Blender</h4>
-            </div>
-            <div>
-                <img class="" src="include/osh3.svg" alt="Open source hardware logo">
-                <h4>Open Source Hardware</h4>
-            </div>
-            <div class="gpl3">
-                <img class="gpl3" src="include/gpl3-4.png" alt="Gpl3 license logo">
-                <h4>Free as in Freedom</h4>
-            </div>
+            <!-- injecting icons with javascript -->
         </div>
     </footer>
-    <script>
-        const helpChk = document.querySelector('#contribute');
-        const submit2 = document.querySelector('#submit2');
-        
-        helpChk.addEventListener('change',e=> {
-            if(e.target.checked){
-                submit2.value = "I Want To Contribute!";
-            } else {
-                submit2.value = "Sign Me Up! (updates only)";
-            }
-        });
-
-
-    </script>
+    <script src="client.js"></script>
 </html>

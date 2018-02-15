@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "HeavyEquipment";
-  src: url(include/HeavyEquipment.ttf);
+  src: url(./include/HeavyEquipment.ttf);
 }
 
 hr {
@@ -27,7 +27,7 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: left;
-  background: url("include/metalTile.png") repeat fixed;
+  background: url("./include/metalTile.png") repeat fixed;
   background-size: 200px 200px;
 }
 
@@ -64,8 +64,8 @@ p {
 
 header {
   height: 270px;
-  background: url("include/oslope5.svg") bottom left no-repeat,
-              url("include/LucyHero1.png") top left no-repeat,
+  background: url("./include/oslope5.svg") bottom left no-repeat,
+              url("./include/lucyHero1.png") top left no-repeat,
               radial-gradient(#000000a8, #000000ff 95%);
   background-size: 100% 100px, cover, cover;
 }
@@ -136,7 +136,7 @@ header {
 
 
 .pitch div {
-  background: url("include/corners.svg") center center no-repeat;
+  background: url("./include/corners.svg") center center no-repeat;
   background-size: 100% 100%;
   /*border-width: 1px;
   border-style: dashed;
@@ -160,14 +160,14 @@ header {
 
 /* orthognal image and call to action wrapper*/
 .bigorthwrap {
-  background: url("include/oslope.svg") top left no-repeat,
+  background: url("./include/oslope.svg") top left no-repeat,
               radial-gradient(#000000a8, #000000ff 95%);
   background-size:100% 100px ,cover;
 }
 
 /* feature image */
 .feat-img {
-  background: url("include/lucy5.png") center center no-repeat;
+  background: url("./include/lucy5.png") center center no-repeat;
   background-size: cover;
   height: 270px;
 }

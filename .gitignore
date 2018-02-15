@@ -7,12 +7,12 @@
 /coverage
 
 # production            /build  /dist
-/server/client/public/dist/*
+/server/client/dist/*
 
 # cache
 /.cache
 # Dont include environmental variables
-server/variables.env
+server/environment.env
 #.env.local
 #.env.development.local
 #.env.test.local
