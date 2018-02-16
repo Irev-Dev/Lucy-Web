@@ -2,10 +2,12 @@
 * text eof=lf
 
 # this should enforce per file/'s to have unix line endings/spacings
-*.js *.css * text eol=lf
+*.js text eol=lf
+*.css text eol=lf
 
 # this should enforce certain files are binary files
 *.png binary
+*.ttf binary
 
 
 ### note
