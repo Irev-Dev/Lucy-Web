@@ -1,1 +1,19 @@
-*.js text eol=lf
+# this should enforce all text files to unix line endings
+* text eof=lf
+
+# this should enforce per file/'s to have unix line endings/spacings
+*.js *.css * text eol=lf
+
+# this should enforce certain files are binary files
+*.png binary
+
+
+### note
+### after doing this sometimes helpfull to remove gitindex and rescan working dirrectory by running
+# rm .git/index
+### rewrite git index to pick up new line endings
+# git reset
+### show the rewritten files
+# git status
+
+## after this do a commit and see what files line endings where really changed.
