@@ -4,12 +4,26 @@
 import cloudinary from 'cloudinary-core';
 
 import { $, $$ } from './modules/bling';
+import { log } from 'util';
 
 // typeAhead( $('.search') );
 
 const cl = new cloudinary.Cloudinary({ cloud_name: 'dwjfssfhq', secure: true });
 
-function featureCards() { 
+function hero(context) {
+  const bannerImgs = [
+    `url(${cl.url('oslope5.svg')}) bottom left no-repeat,`,
+    `url(${cl.url('KUR033.Hero.DeepEtch2.png')})top left no-repeat,`,
+    'radial-gradient(#000000a8, #000000ff 95%)',
+  ];
+  if (context === 'backgroundSize') {
+    // shorthand for background not working, background-size must also be used
+    return '100% 100px, cover, cover';
+  }
+  return bannerImgs.map(img => `${img}`).join('');
+}
+
+function featureCards() {
   const feaImgs = [
     { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
     { className: 'drag', src: cl.url('lucydrone/card2'), alt: 'yes no?' },
@@ -34,13 +48,16 @@ function flexicons() {
 // document.onreadystatechange = () => {
 // const htlpChk = $('#contribute'); // document.querySelector('#contribute');
 // const submit2 = $('#submit2'); // document.querySelector('#submit2');
+const bannerImgs = $('.banner').style;
 const secFeatureCards = $('.lite.featC');
 const footerIcons = $('.flexicons');
 
 secFeatureCards.innerHTML = featureCards();
 footerIcons.innerHTML = flexicons();
-  /*
-  
+bannerImgs.background = hero();
+bannerImgs.backgroundSize = hero('backgroundSize');
+/*
+
 };
 
   htlpChk.addEventListener('change', (e) => {

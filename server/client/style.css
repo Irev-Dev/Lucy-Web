@@ -64,10 +64,10 @@ p {
 
 header {
   height: 270px;
-  background: url("./include/oslope5.svg") bottom left no-repeat,
+  /*background: url("./include/oslope5.svg") bottom left no-repeat,
               url("./include/lucyHero1.png") top left no-repeat,
               radial-gradient(#000000a8, #000000ff 95%);
-  background-size: 100% 100px, cover, cover;
+  background-size: 100% 100px, cover, cover;*/
 }
 
 
