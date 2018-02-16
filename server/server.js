@@ -33,7 +33,7 @@ app.use(cookieParser());
 app.get('/', (req, res) => {
   // res.sendFile(path.join(__dirname + '/client/index.html'));
   // res.redirect(path.join(__dirname + '/client/dist/index.html'))
-  res.redirect('/index.html')
+  res.redirect('/index.html');
 });
 
 module.exports = app;
