@@ -143,8 +143,6 @@ header {
 
 /* feature image */
 .feat-img {
-  background: url("./include/lucy5.png") center center no-repeat;
-  background-size: cover;
   height: 270px;
 }
 

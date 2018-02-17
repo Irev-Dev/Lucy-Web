@@ -49,6 +49,13 @@ function orangeSlope(context) {
   return Imgs.map(img => `${img}`).join('');
 }
 
+function lucyOrth(context) {
+  if (context === 'backgroundSize') {
+    return 'cover';
+  }
+  return `url(${cl.url('FrontOrthoBlue.png')}) center center no-repeat`;
+}
+
 function featureCards() {
   const feaImgs = [
     { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
@@ -78,6 +85,7 @@ const bannerImgs = $('.banner').style;
 const cornerSvg = $('.pitch__div').style;
 const body = $('body').style;
 const bigOrthWrap = $('.bigorthwrap').style;
+const lucyOrtho = $('.feat-img').style;
 const secFeatureCards = $('.lite.featC');
 const footerIcons = $('.flexicons');
 
@@ -91,6 +99,7 @@ footerIcons.innerHTML = flexicons();
   cornerSvg[context] = corners(context);
   body[context] = metalTile(context);
   bigOrthWrap[context] = orangeSlope(context);
+  lucyOrtho[context] = lucyOrth(context);
   return null;
 });
 
