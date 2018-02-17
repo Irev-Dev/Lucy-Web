@@ -36,4 +36,13 @@ app.get('/', (req, res) => {
   res.redirect('/index.html');
 });
 
+app.post('/add', (req, res) => {
+  const email = req.body;
+  console.log(req.body);
+  // TODO save to database instead of logging
+  res.redirect(`/index.html`);
+  // TODO redirect ot success page
+  // res.redirect(`/add/${email.email}`);
+});
+
 module.exports = app;
