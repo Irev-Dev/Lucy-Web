@@ -3,8 +3,8 @@
 
 import cloudinary from 'cloudinary-core';
 
-import { $, $$ } from './modules/bling';
-import { log } from 'util';
+import { $, $$ } from './modules/bling'; // eslint-disable-line
+import { log } from 'util'; // eslint-disable-line
 
 // typeAhead( $('.search') );
 
@@ -78,9 +78,6 @@ function flexicons() {
   `).join('');
 }
 
-// document.onreadystatechange = () => {
-// const htlpChk = $('#contribute'); // document.querySelector('#contribute');
-// const submit2 = $('#submit2'); // document.querySelector('#submit2');
 const bannerImgs = $('.banner').style;
 const cornerSvg = $('.pitch__div').style;
 const body = $('body').style;
@@ -103,17 +100,18 @@ footerIcons.innerHTML = flexicons();
   return null;
 });
 
-/*
+// document.onreadystatechange = () => {
+// const htlpChk = $('#contribute'); // document.querySelector('#contribute');
+// const submit2 = $('#submit2'); // document.querySelector('#submit2');
+// };
 
-};
-
-  htlpChk.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      submit2.value = 'I Want To Contribute!';
-    } else {
-      submit2.value = 'Sign Me Up! (updates only)';
-    }
-  });
+$('#contribute').addEventListener('change', (e) => {
+  if (e.target.checked) {
+    $('#submit2').value = 'I Want To Contribute!';
+  } else {
+    $('#submit2').value = 'Sign Me Up! (updates only)';
+  }
+});
 /*
 
 //};
