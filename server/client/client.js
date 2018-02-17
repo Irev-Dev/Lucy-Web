@@ -13,7 +13,12 @@ const cl = new cloudinary.Cloudinary({ cloud_name: 'dwjfssfhq', secure: true });
 function hero(context) {
   const bannerImgs = [
     `url(${cl.url('oslope5.svg')}) bottom left no-repeat,`,
-    `url(${cl.url('KUR033.Hero.DeepEtch2.png')})top left no-repeat,`,
+    `url(${cl.url('KUR033.Hero.DeepEtch2.png', {
+      width: $('body').clientWidth,
+      crop: 'scale',
+      quality: 'auto',
+      fetch_format: 'auto',
+    })})top left no-repeat,`,
     'radial-gradient(#000000a8, #000000ff 95%)',
   ];
   if (context === 'backgroundSize') {
@@ -53,7 +58,12 @@ function lucyOrth(context) {
   if (context === 'backgroundSize') {
     return 'cover';
   }
-  return `url(${cl.url('FrontOrthoBlue.png')}) center center no-repeat`;
+  return `url(${cl.url('FrontOrthoBlue.png', {
+    width: $('.feat-img').clientWidth,
+    crop: 'scale',
+    quality: 'auto',
+    fetch_format: 'auto',
+  })}) center center no-repeat`;
 }
 
 function featureCards() {
