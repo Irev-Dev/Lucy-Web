@@ -141,13 +141,6 @@ header {
   text-align: center;
 }
 
-/* orthognal image and call to action wrapper*/
-.bigorthwrap {
-  background: url("./include/oslope.svg") top left no-repeat,
-              radial-gradient(#000000a8, #000000ff 95%);
-  background-size:100% 100px ,cover;
-}
-
 /* feature image */
 .feat-img {
   background: url("./include/lucy5.png") center center no-repeat;

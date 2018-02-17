@@ -37,6 +37,18 @@ function metalTile(context) {
   return `url(${cl.url('lucydrone/metalTile.png')}) repeat fixed`;
 }
 
+function orangeSlope(context) {
+  const Imgs = [
+    `url(${cl.url('oslope.svg')}) top left no-repeat,`,
+    'radial-gradient(#000000a8, #000000ff 95%)',
+  ];
+  if (context === 'backgroundSize') {
+    // shorthand for background not working, background-size must also be used
+    return '100% 100px, cover';
+  }
+  return Imgs.map(img => `${img}`).join('');
+}
+
 function featureCards() {
   const feaImgs = [
     { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
@@ -65,6 +77,7 @@ function flexicons() {
 const bannerImgs = $('.banner').style;
 const cornerSvg = $('.pitch__div').style;
 const body = $('body').style;
+const bigOrthWrap = $('.bigorthwrap').style;
 const secFeatureCards = $('.lite.featC');
 const footerIcons = $('.flexicons');
 
@@ -77,6 +90,7 @@ footerIcons.innerHTML = flexicons();
   bannerImgs[context] = hero(context);
   cornerSvg[context] = corners(context);
   body[context] = metalTile(context);
+  bigOrthWrap[context] = orangeSlope(context);
   return null;
 });
 
