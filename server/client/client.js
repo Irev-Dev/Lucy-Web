@@ -30,6 +30,13 @@ function corners(context) {
   return `url(${cl.url('corners.svg')}) center center no-repeat`;
 }
 
+function metalTile(context) {
+  if (context === 'backgroundSize') {
+    return '200px 200px';
+  }
+  return `url(${cl.url('lucydrone/metalTile.png')}) repeat fixed`;
+}
+
 function featureCards() {
   const feaImgs = [
     { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
@@ -57,6 +64,7 @@ function flexicons() {
 // const submit2 = $('#submit2'); // document.querySelector('#submit2');
 const bannerImgs = $('.banner').style;
 const cornerSvg = $('.pitch__div').style;
+const body = $('body').style;
 const secFeatureCards = $('.lite.featC');
 const footerIcons = $('.flexicons');
 
@@ -65,9 +73,11 @@ secFeatureCards.innerHTML = featureCards();
 footerIcons.innerHTML = flexicons();
 
 // CSS image injection - Unable to use shorthand to set background-size
-['background', 'backgroundSize'].map(context => {
+['background', 'backgroundSize'].map((context) => {
   bannerImgs[context] = hero(context);
   cornerSvg[context] = corners(context);
+  body[context] = metalTile(context);
+  return null;
 });
 
 /*

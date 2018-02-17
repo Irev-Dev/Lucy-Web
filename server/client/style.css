@@ -27,8 +27,6 @@ body {
   font-size: 1.1em;
   line-height: 1.5;
   text-align: left;
-  background: url("./include/metalTile.png") repeat fixed;
-  background-size: 200px 200px;
 }
 
 img { 
@@ -128,8 +126,6 @@ header {
 
 
 .pitch__div {
-  /*background: url("./include/corners.svg") center center no-repeat;
-  background-size: 100% 100%;*/
   padding: 10px 0;
   margin: 0 5%;
 }
