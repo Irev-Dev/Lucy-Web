@@ -59,6 +59,38 @@ p {
 
 
 /* header */
+.flash_wrap {
+  display: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(#000000a8, #000000ff 95%);
+  background-size:cover;
+  z-index: 100;
+}
+
+.flash {
+  text-align: center;
+  box-sizing: border-box;
+  width: 90%;
+  max-width: 1200px;
+  padding: 30px;
+  background: #333;
+  border: 1px solid #eaeaea;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 100px auto;
+}
+
+.flash h3 {
+  padding-top: 0;
+  font-size: 30px;
+  margin: 0;
+  width: 100%;
+}
+
+.flash p {
+  padding: 5px;
+}
 
 header {
   height: 270px;

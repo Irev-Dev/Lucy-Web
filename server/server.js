@@ -37,10 +37,9 @@ app.get('/', (req, res) => {
 });
 
 app.post('/add', (req, res) => {
-  const email = req.body;
-  console.log(req.body);
+  console.log(req.body); // eslint-disable-line
   // TODO save to database instead of logging
-  res.redirect(`/index.html`);
+  res.redirect('/index.html');
   // TODO redirect ot success page
   // res.redirect(`/add/${email.email}`);
 });
