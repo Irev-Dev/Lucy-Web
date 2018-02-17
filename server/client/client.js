@@ -23,6 +23,13 @@ function hero(context) {
   return bannerImgs.map(img => `${img}`).join('');
 }
 
+function corners(context) {
+  if (context === 'backgroundSize') {
+    return '100% 100%';
+  }
+  return `url(${cl.url('corners.svg')}) center center no-repeat`;
+}
+
 function featureCards() {
   const feaImgs = [
     { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
@@ -49,13 +56,20 @@ function flexicons() {
 // const htlpChk = $('#contribute'); // document.querySelector('#contribute');
 // const submit2 = $('#submit2'); // document.querySelector('#submit2');
 const bannerImgs = $('.banner').style;
+const cornerSvg = $('.pitch__div').style;
 const secFeatureCards = $('.lite.featC');
 const footerIcons = $('.flexicons');
 
+// HTML image injection
 secFeatureCards.innerHTML = featureCards();
 footerIcons.innerHTML = flexicons();
-bannerImgs.background = hero();
-bannerImgs.backgroundSize = hero('backgroundSize');
+
+// CSS image injection - Unable to use shorthand to set background-size
+['background', 'backgroundSize'].map(context => {
+  bannerImgs[context] = hero(context);
+  cornerSvg[context] = corners(context);
+});
+
 /*
 
 };

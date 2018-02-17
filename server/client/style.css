@@ -64,10 +64,6 @@ p {
 
 header {
   height: 270px;
-  /*background: url("./include/oslope5.svg") bottom left no-repeat,
-              url("./include/lucyHero1.png") top left no-repeat,
-              radial-gradient(#000000a8, #000000ff 95%);
-  background-size: 100% 100px, cover, cover;*/
 }
 
 
@@ -102,15 +98,11 @@ header {
 
 .vid div{
   width: 90%;
-  /*max-width: 1300px;*/
   margin: 0 auto;
   padding-top: 70px;
-  /*position: relative;
-  bottom: 50px;*/
 }
 
 .VideoWrapper {
-  
   position: relative;
   padding-bottom: 56.25%;
   padding-top:25px;
@@ -135,14 +127,9 @@ header {
 }
 
 
-.pitch div {
-  background: url("./include/corners.svg") center center no-repeat;
-  background-size: 100% 100%;
-  /*border-width: 1px;
-  border-style: dashed;
-  border-color:  #0095cf44; */
-  /*border-bottom: 1px;
-  border-top: 1px;*/
+.pitch__div {
+  /*background: url("./include/corners.svg") center center no-repeat;
+  background-size: 100% 100%;*/
   padding: 10px 0;
   margin: 0 5%;
 }
@@ -447,7 +434,6 @@ footer .flexicons .gpl3 img {
   }
 
   .orth-cta-wrapper {
-    /*background: radial-gradient(#00000000, #000000ff);*/
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -457,15 +443,12 @@ footer .flexicons .gpl3 img {
   .feat-img {
     grid-column: 2 / span 5;
     grid-row: 1;
-    /*background-size: contain;*/
   }
-
 
   .cta1 {
     align-self: center;
     grid-column: 1 / span 2;
     grid-row: 1;
   }
-
 
 }
