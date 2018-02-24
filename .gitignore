@@ -19,3 +19,6 @@ server/environment.env
 #.env.production.local
 
 npm-debug.log*
+
+# vscode
+/.vscode/*
