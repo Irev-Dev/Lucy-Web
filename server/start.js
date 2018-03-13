@@ -5,6 +5,7 @@ if (require('dotenv').config({ path: path.join('server', 'environment.env') }).e
 }
 
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const connectstring = process.env.DATABASE + process.env.NODE_ENV;
 
@@ -17,6 +18,7 @@ mongoose.connection.on('connected', () => console.log('mongo connected successfu
 // READY?! Let's go!
 
 // import all of our models
+require('./models/User');
 
 const app = require('./server.js');
 
