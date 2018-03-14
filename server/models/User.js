@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 const validator = require('validator');
+const mongodbErrorHandler = require('mongoose-mongodb-errors');
 
 const userSchema = new mongoose.Schema({
   email: {
@@ -19,5 +20,6 @@ const userSchema = new mongoose.Schema({
   },
 });
 
+userSchema.plugin(mongodbErrorHandler);
 
-// module.exports = mongoose.model('User', userSchema);
+module.exports = mongoose.model('User', userSchema);

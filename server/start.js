@@ -9,7 +9,7 @@ const validator = require('validator');
 
 const connectstring = process.env.DATABASE + process.env.NODE_ENV;
 
-mongoose.connect(connectstring);
+mongoose.connect(connectstring,{dbName: 'Lucy'});
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
   console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
