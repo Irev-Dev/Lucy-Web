@@ -11,6 +11,8 @@ const expressValidator = require('express-validator');
 // const helpers = require('./helpers');
 // const errorHandlers = require('./handlers/errorHandlers');
 
+const userController = require('./controllers/userController');
+
 // create our Express app
 const app = express();
 
@@ -36,12 +38,18 @@ app.get('/', (req, res) => {
   res.redirect('/index.html');
 });
 
-app.post('/add', (req, res) => {
-  console.log(req.body); // eslint-disable-line
-  // TODO save to database instead of logging
-  res.redirect('/index.html');
-  // TODO redirect ot success page
-  // res.redirect(`/add/${email.email}`);
-});
+// app.post('/add', (req, res) => {
+//   console.log(req.body); // eslint-disable-line
+//   // TODO save to database instead of logging
+//   res.redirect('/index.html');
+//   // TODO redirect ot success page
+//   // res.redirect(`/add/${email.email}`);
+// });
+
+app.post('/add',
+  userController.validateRegister,
+  userController.register,
+  (req, res) => {res.redirect('/index.html');}
+);
 
 module.exports = app;

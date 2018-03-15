@@ -15,7 +15,7 @@ const userSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    required: 'Please supply a name',
+    //required: 'Please supply a name',
     trim: true,
   },
 });
@@ -30,9 +30,9 @@ module.exports = mongoose.model('User', userSchema);
 
 const testdb = async() => {
   const User = mongoose.model('User');
-  const user = new User({email: 'hiAlistair@hi.com', name: 'hithere'});
-  await user.save();
-  console.log('it worked I think');
+  // const user = new User({email: 'hitestWhonix2@hi.com', name: 'hithere'});
+  // await user.save();
+  // console.log('it worked I think');
   const users = await User.find();
   console.log(users);
 }
