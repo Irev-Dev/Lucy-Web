@@ -42,3 +42,14 @@ exports.setToken = async (req, res, next) => {
   });
   next();
 };
+
+exports.verifyToken = async (req, res, next) => {
+  const user = await User.findOne({ verifyToken: req.params.token });
+  if(!user) {
+    return res.send('error');
+  }
+  user.verifyDate = Date.now();
+  user.verifyToken = undefined;
+  await user.save();
+  res.send("email verifyed");
+};

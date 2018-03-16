@@ -46,6 +46,8 @@ app.post('/add',
   (req, res) => {res.redirect('/index.html');}
 );
 
+app.get('/verify/:token', catchErrors(userController.verifyToken));
+
 // app.get('/verify/:token', authController.confirmeEmail);
 
 module.exports = app;
