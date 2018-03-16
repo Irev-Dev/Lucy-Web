@@ -48,6 +48,4 @@ app.post('/add',
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 
-// app.get('/verify/:token', authController.confirmeEmail);
-
 module.exports = app;

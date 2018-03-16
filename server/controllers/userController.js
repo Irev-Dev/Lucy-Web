@@ -15,14 +15,9 @@ exports.validateForm = (req, res, next) => {
     remove_extension: false,
     gmail_remove_subaddress: false,
   });
-  // req.checkBody('password', 'Password Cannot be Blank!').notEmpty();
-  // req.checkBody('password-confirm', 'Confirmed Password Cannot be Blank!').notEmpty();
-  // req.checkBody('password-confirm', 'Ooops! Your passwords do not match').equals(req.body.password);
   const errors = req.validationErrors();
   if (errors) {
     console.log('Email error!', errors);
-    // req.flash('error', errors.map(err => err.msg));
-    // res.render('register', {title: 'Register', body: req.body, flashes: req.flash() });
   }
   next();
 };
