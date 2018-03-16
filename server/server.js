@@ -10,8 +10,10 @@ const expressValidator = require('express-validator');
 // const routes = require('./routes/index');
 // const helpers = require('./helpers');
 // const errorHandlers = require('./handlers/errorHandlers');
+// const mail = require('../handlers/mail');
 
 const userController = require('./controllers/userController');
+const { catchErrors } = require('./handlers/errorHandlers');
 
 // create our Express app
 const app = express();
@@ -38,18 +40,12 @@ app.get('/', (req, res) => {
   res.redirect('/index.html');
 });
 
-// app.post('/add', (req, res) => {
-//   console.log(req.body); // eslint-disable-line
-//   // TODO save to database instead of logging
-//   res.redirect('/index.html');
-//   // TODO redirect ot success page
-//   // res.redirect(`/add/${email.email}`);
-// });
-
 app.post('/add',
-  userController.validateRegister,
-  userController.register,
+  userController.validateForm,
+  catchErrors(userController.setToken),
   (req, res) => {res.redirect('/index.html');}
 );
+
+// app.get('/verify/:token', authController.confirmeEmail);
 
 module.exports = app;

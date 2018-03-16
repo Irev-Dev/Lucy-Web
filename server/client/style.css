@@ -194,14 +194,14 @@ header {
   padding-bottom: 50px;
 }
 
-.cta1 input[type="email"], .cta1 input[type="submit"] {
+.cta1 input[type="email"], .cta1 input[type="submit"], .cta1 input[name="name"] {
   display: inline-block;
   box-sizing: border-box;
   text-decoration: none;
   padding: 0.6em 0;
 }
 
-.cta1 input[type="email"] {
+.cta1 input[type="email"], .cta1 input[name="name"] {
   width:100%;
   border: 3px solid #0095cf;
   margin: 0;
@@ -211,7 +211,7 @@ header {
   text-align: center;
 }
 
-.cta1 input[type="email"]:hover, .cta1 input[type="email"]:focus {
+.cta1 input[type="email"]:hover, .cta1 input[type="email"]:focus, .cta1 input[name="name"]:focus {
   background-color: #eaeaeaaa;
   color: #eaeaea;
 }

@@ -15,14 +15,14 @@ const userSchema = new mongoose.Schema({
   },
   name: {
     type: String,
-    //required: 'Please supply a name',
+    // required: 'Please supply a name',
     trim: true,
   },
+  verifyToken: String,
+  verifyExpires: Date,
 });
 
 userSchema.plugin(mongodbErrorHandler);
-
-
 
 module.exports = mongoose.model('User', userSchema);
 
