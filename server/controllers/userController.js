@@ -31,9 +31,9 @@ exports.setToken = async (req, res, next) => {
   const resetURL = `http://${req.headers.host}/verify/${user.verifyToken}`;
   await mail.send({
     user,
-    subject: 'Password Reset',
+    subject: 'Please Verify',
     resetURL,
-    // filename: 'password-reset', // wesbos's file name used for PUG templates
+    filename: 'Verify', // wesbos's file name used for PUG templates
   });
   next();
 };
