@@ -19,7 +19,8 @@ const userSchema = new mongoose.Schema({
     trim: true,
   },
   verifyToken: String,
-  verifyExpires: Date,
+  date: Date,
+  verifyDate: Date,
 });
 
 userSchema.plugin(mongodbErrorHandler);
@@ -30,11 +31,11 @@ module.exports = mongoose.model('User', userSchema);
 
 const testdb = async() => {
   const User = mongoose.model('User');
-  // const user = new User({email: 'hitestWhonix2@hi.com', name: 'hithere'});
-  // await user.save();
-  // console.log('it worked I think');
-  const users = await User.find();
+  let users = await User.find();
   console.log(users);
+  // await User.remove(); // Purge the db, DON'T leave in production code!!!!
+  // users = await User.find();
+  // console.log(users);
 }
 
 testdb();
