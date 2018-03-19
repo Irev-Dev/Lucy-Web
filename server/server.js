@@ -48,4 +48,6 @@ app.post('/add',
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 
+app.get('/subscription', catchErrors(userController.subsciptionChange));
+
 module.exports = app;

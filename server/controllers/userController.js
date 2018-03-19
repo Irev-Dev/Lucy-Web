@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 const promisify = require('es6-promisify');
 const crypto = require('crypto');
 const mail = require('../handlers/mail');
+const moment = require('moment');
 
 
 const User = mongoose.model('User');
@@ -27,12 +28,16 @@ exports.setToken = async (req, res, next) => {
   // set verify token
   user.verifyToken = crypto.randomBytes(20).toString('hex');
   user.date = Date.now();
+  user.subscribeSetting = 'default';
+  user.subscribeToken = crypto.randomBytes(20).toString('hex');
   await user.save();
   const resetURL = `http://${req.headers.host}/verify/${user.verifyToken}`;
+  const subscribeURL = `http://${req.headers.host}/subscription?token=${user.subscribeToken}&source=verify&date=${moment().format('YYYYMMDD')}`;
   await mail.send({
     user,
     subject: 'Please Verify',
     resetURL,
+    subscribeURL,
     filename: 'Verify', // wesbos's file name used for PUG templates
   });
   next();
@@ -47,4 +52,17 @@ exports.verifyToken = async (req, res, next) => {
   user.verifyToken = undefined;
   await user.save();
   res.send("email verifyed");
+};
+
+exports.subsciptionChange = async (req, res) => {
+  const user = await User.findOne({ subscribeToken: req.query.token });
+  if(!user) {
+    return res.send('error');
+  }
+  user.subscribeSetting = 'unsubscribed';
+  user.subscribeUpdateDate = Date.now();
+  user.subscribeUpdateFrom = req.query.date;
+  user.subscribeUpdateSource = req.query.source;
+  await user.save();
+  res.send('sorry to se you go :(');
 };
