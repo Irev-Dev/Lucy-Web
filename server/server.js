@@ -19,8 +19,8 @@ const { catchErrors } = require('./handlers/errorHandlers');
 const app = express();
 
 // view engine setup
-// app.set('views', path.join(__dirname, 'views')); //pug files folder
-// app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
+app.set('views', path.join(__dirname, 'client', 'views')); //pug files folder
+app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
 
 // public files
 app.use(express.static(path.join(__dirname, 'client/dist/')));
@@ -50,7 +50,8 @@ app.use(session({
 // app.use(flash());
 
 app.get('/', (req, res) => {
-  res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>')
+  // res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
+  res.render('layout', {});
 });
 
 app.post('/add',
