@@ -40,7 +40,10 @@ exports.setToken = async (req, res, next) => {
     subscribeURL,
     filename: 'Verify', // wesbos's file name used for PUG templates
   });
-  next();
+  //next();
+  req.flash('success', `you did it!! ${req.body.name}`);
+  // res.render('main', {});
+  res.redirect('/wtf');
 };
 
 exports.verifyToken = async (req, res, next) => {

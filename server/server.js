@@ -1,11 +1,13 @@
 const express = require('express');
 const session = require('express-session');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo')(session);
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 // const passport = require('passport');
 // const promisify = require('es6-promisify');
-// const flash = require('connect-flash');
+const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 // const routes = require('./routes/index');
 // const helpers = require('./helpers');
@@ -36,7 +38,7 @@ app.use(cookieParser());
 
 // Sessions allow us to store data on visitors from request to request
 // This keeps users logged in and allows us to send flash messages
-/*
+
 app.use(session({
   secret: process.env.SECRET,
   key: process.env.KEY,
@@ -44,20 +46,38 @@ app.use(session({
   saveUninitialized: false,
   store: new MongoStore({ mongooseConnection: mongoose.connection }),
 }));
-*/
+
 
 // The flash middleware let's us use req.flash('error', 'Shit!'), which will then pass that message to the next page the user requests
-// app.use(flash());
+app.use(flash());
+
+// pass variables to our templates + all requests
+app.use((req, res, next) => {
+  // res.locals.h = helpers;
+  res.locals.flashes = req.flash();
+  res.locals.user = req.user || null;
+  res.locals.currentPath = req.path;
+  next();
+});
 
 app.get('/', (req, res) => {
+  res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
+  // res.render('main', {});
+});
+
+app.get('/wtf', (req, res) => {
   // res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
   res.render('main', {});
 });
 
 app.post('/add',
   userController.validateForm,
-  catchErrors(userController.setToken),
-  (req, res) => {res.redirect('/index.html');}
+  catchErrors(userController.setToken)//,
+
+  // (req, res) => {
+  //   req.flash('error', errors.map(err => err.msg));
+  //   res.redirect('/index.html');
+  // }
 );
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
