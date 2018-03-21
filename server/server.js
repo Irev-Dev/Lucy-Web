@@ -51,7 +51,7 @@ app.use(session({
 
 app.get('/', (req, res) => {
   // res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
-  res.render('layout', {});
+  res.render('main', {});
 });
 
 app.post('/add',
