@@ -1,0 +1,11 @@
+extends email-layout
+
+block content
+  h2 Email Verification
+  p Hey! We're so glad you're interested in Lucy Kwad. You will need to verify your email address to be eligable to participlate in beta testing (link below).
+  +button(resetURL, 'Verify Email →')
+  p If you can't click the above button please visit #{resetURL}
+  p You can greatly increase your chances of being sent a Lucy Kwad free, but telling us a little about yourself. For example sending us youtube links of your flying, how long you have been flying FPV, any groups or races you've been in.
+  br
+  p If you didn't request this email, please ignore it.
+  +smallButton(subscribeURL, 'Change Subscription')
