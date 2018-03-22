@@ -2,7 +2,7 @@ doctype html
 html
   head
     title hi there
-    
+    link(rel='stylesheet', href='/style.css')
     meta(name="viewport" content="width=device-width, initial-scale=1")
   body
 
@@ -13,7 +13,7 @@ html
             - const categories = Object.keys(locals.flashes)
             each category in categories
               each message in flashes[category]
-                .flash(class=`flash--${category}`)
+                .flash(id=`flash--${category}`)
                   p.flash__text!= message
                   button.flash__remove(onClick="this.parentElement.remove()") &times;
     
