@@ -8,6 +8,7 @@
     "watch-server": "nodemon ./server/start.js --ignore public/",
     "build-js": "parcel build -d server/client/dist server/client/client.js --public-url ./",
     "build-css":"concurrently \"parcel build -d server/client/dist server/client/normalise.css --public-url ./\" \"parcel build -d server/client/dist server/client/style.css --public-url ./ \" ",
+    "build-html": "parcel build -d server/client/dist server/client/index.html --public-url ./",
     "build":"concurrently \"npm run build-js\" \"npm run build-css\" ",
     "start": "node ./server/start.js",
     "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name"

@@ -74,6 +74,8 @@ p {
   } 
 }
 
+
+
 .flash {
   background: white;
   color: #333;
@@ -122,13 +124,13 @@ p {
   border-radius: 3px; 
 }
 
-#flash--success {
+.flash--success {
   background: linear-gradient(135deg, #d2ff52 0%, #91e842 100%); 
 }
-#flash--error {
+.flash--error {
   background: linear-gradient(20deg, red 0%, #c80000 100%); 
 }
-#flash--info {
+.flash--info {
   background: linear-gradient(35deg, #f1e767 0%, #feb645 100%); 
 }
 .flash p {
@@ -137,7 +139,8 @@ p {
 
 
 /* header */
-.flash_wrap {
+/*this was my own flash before I decided to use the node ones*/
+/*.flash_wrap {
   display: none;
   position: fixed;
   width: 100%;
@@ -157,7 +160,7 @@ p {
   border: 1px solid #eaeaea;
   font-family: Arial, Helvetica, sans-serif;
   margin: 100px auto;
-}
+}*/
 
 .flash h3 {
   padding-top: 0;
