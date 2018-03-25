@@ -58,8 +58,8 @@ p {
 }
 
 /* Flashes */
-.flash-messages {
-  background-color: #333;
+.inner {
+  background: radial-gradient(#000000a8, #000000ff 95%);
 }
 
 @keyframes slideIn {
@@ -78,10 +78,14 @@ p {
 
 .flash {
   background: white;
+  margin: 1rem auto 0;
+  box-sizing: border-box;
+  width: 80%;
+  max-width: 1200px;
   color: #333;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-  margin-bottom: 1rem;
-  padding: 2rem;
+  /*margin-bottom: 1rem;*/
+  padding: 1rem;
   position: relative;
   z-index: 1;
   border-radius: 3px;
@@ -89,6 +93,11 @@ p {
   display: flex;
   animation: slideIn forwards .1s ease-in-out 2;
   animation-timing-function: cubic-bezier(0.01, 1.68, 0.58, 1); 
+}
+
+
+.flash:first-child {
+  margin-top: 0;
 }
 
 .flash + .flash {
@@ -105,6 +114,7 @@ p {
 .flash__remove {
   background: none;
   border: 0; 
+  transform: scale(2);
 }
 .flash__remove:hover {
   color: #FFC40E; 
@@ -267,7 +277,7 @@ header {
 .cta1 form {
   /*display: flex;*/
   width: 90%;
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
   padding-bottom: 20px;
   position: relative;
