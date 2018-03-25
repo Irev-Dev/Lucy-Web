@@ -40,32 +40,41 @@ exports.setToken = async (req, res, next) => {
     subscribeURL,
     filename: 'Verify', // wesbos's file name used for PUG templates
   });
-  //next();
-  req.flash('success', `you did it!! ${req.body.name}`);
-  // res.render('main', {});
-  res.redirect('/wtf');
+  req.flash('success', `<div>
+  <h3>Thanks for your support! 🙌</h3>
+  <p>Please verify your email by clicking the link we've sent you.</p>
+  <p>This project's success depends on interest. Would you mind sharing this with a friend?</p>
+  </div>
+  `);
+  res.redirect('/');
 };
 
 exports.verifyToken = async (req, res, next) => {
   const user = await User.findOne({ verifyToken: req.params.token });
   if(!user) {
-    return res.send('error');
+    req.flash('error', 'Whoops, there seems to be a problem, we were unable to verify your email');
+    res.redirect('/');
+    return;
   }
   user.verifyDate = Date.now();
   user.verifyToken = undefined;
   await user.save();
-  res.send("email verifyed");
+  req.flash('success', 'Email verified, nice one.');
+  res.redirect('/');
 };
 
 exports.subsciptionChange = async (req, res) => {
   const user = await User.findOne({ subscribeToken: req.query.token });
   if(!user) {
-    return res.send('error');
+    req.flash('error', "Whoops, something went wrong, we were unable to verify your account and therefore not able to change your subscription.");
+    res.redirect('/');
+    return;
   }
   user.subscribeSetting = 'unsubscribed';
   user.subscribeUpdateDate = Date.now();
   user.subscribeUpdateFrom = req.query.date;
   user.subscribeUpdateSource = req.query.source;
   await user.save();
-  res.send('sorry to se you go :(');
+  req.flash('info', "We're sorry to see you go :( <br> You are now unsubscribed");
+  res.redirect('/');
 };

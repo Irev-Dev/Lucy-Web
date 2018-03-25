@@ -61,31 +61,13 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  req.flash('info', `you did it!! `);
   res.render('main', {});
 });
 
-app.get('/wtf', (req, res) => {
-  // res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
-  req.flash('success', `<div>
-  <h3>Thanks for your support! 🙌</h3>
-  <p>Please verify your email by clicking the link we've sent you.</p>
-  <p>This project's success depends on interest. Would you mind sharing this with a friend?</p>
-  </div>
-  `);
-  req.flash('info', `you did it!! `);
-  req.flash('error', `you did it!! `);
-  res.render('main', {});
-});
 
 app.post('/add',
   userController.validateForm,
-  catchErrors(userController.setToken)//,
-
-  // (req, res) => {
-  //   req.flash('error', errors.map(err => err.msg));
-  //   res.redirect('/index.html');
-  // }
+  catchErrors(userController.setToken)
 );
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
