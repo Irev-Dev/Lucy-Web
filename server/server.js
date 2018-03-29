@@ -61,23 +61,13 @@ app.use((req, res, next) => {
 });
 
 app.get('/', (req, res) => {
-  res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
-  // res.render('main', {});
-});
-
-app.get('/wtf', (req, res) => {
-  // res.send('<p> Welcome, this is a response to be replaced with a pug template response</p>');
   res.render('main', {});
 });
 
+
 app.post('/add',
   userController.validateForm,
-  catchErrors(userController.setToken)//,
-
-  // (req, res) => {
-  //   req.flash('error', errors.map(err => err.msg));
-  //   res.redirect('/index.html');
-  // }
+  catchErrors(userController.setToken)
 );
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
