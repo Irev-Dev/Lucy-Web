@@ -189,15 +189,15 @@ header {
 
 
 .title {
-  width: 45%;
+  width: 50%;
   min-width: 200px;
   float: right;
   text-align: right;
-  margin-right: 50px;
+  margin-right: 10px;
 }
 
 .title h1{
-  padding:170px 0 0 0;
+  padding:100px 0 0 0;
 }
 
 .title p{
@@ -207,6 +207,76 @@ header {
 
 
 /* video section */
+.places-content {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.places {
+  width: 90%;
+  margin: 0 auto;  
+  /*background: #eaeaea;*/
+  color: #111;
+}
+
+.places {
+
+  position: relative;
+  display: flex;
+  z-index: 3;
+}
+
+.places:after {
+  content: '';
+  display: block;
+  background: white;
+  position: absolute;
+  width: 100%;
+  height: calc(100% + 20px);
+  z-index: -1;
+  box-shadow: 0px 0px  2px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 0px ; 
+  
+}
+
+.places-left {
+  background: linear-gradient(150deg, #e16a36 45%, #0095cf 55%);
+  font-size: 72px;
+  font-weight: bold;
+  background-clip: text;
+  color: transparent;
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  text-align: center;
+  /*text-fill-color: transparent;*/
+}
+
+button {
+  font-family: HeavyEquipment ,Arial, Helvetica, sans-serif;
+  width:100%;
+  background: #0095cf;
+  border: 3px solid #0095cf;
+  margin-top: 10px;
+  padding: 0.6em 0;
+
+}
+
+button:hover {
+  background: rgb(69, 208, 255);
+  /*color: rgb(201, 201, 201);*/
+}
+
+
+/*.places-left {
+  background: #e16a36;
+  color: #0000;
+
+}*/
+
+
+
 .vid, .pitch {
   background-color: #00000000;
 }
