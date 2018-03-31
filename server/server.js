@@ -64,6 +64,10 @@ app.get('/', (req, res) => {
   res.render('main', {});
 });
 
+app.get('/reg', (req, res) => {
+  res.render('register', {});
+});
+
 
 app.post('/add',
   userController.validateForm,

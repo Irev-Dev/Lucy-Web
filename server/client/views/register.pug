@@ -1,0 +1,16 @@
+extends layout
+
+block content
+  .reg-form-wrap
+    form(action="/add2", method="post" id="usrform")
+      label(for="name") What do we call you?
+      input(type="text", name="name", placeholder="psudoname", required)
+      label(for="email") What's the best email to contact you?
+      input(type="email", name="email", placeholder="Lucy.Parsons@riseup.net", required)
+      label(for="years") How long have you been flying FPV?
+      input(type="number", name="years")
+      label(for="URL") Do you have a social media / youtube account with your FPV footage?
+      input(type="url", name="URL", placeholder="www.youtube.com/")
+      label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why'd your a good beta tester? Please tell about comps or community involvement.
+      textarea(name="longForm" form="usrforma", cols="30", rows="10")
+      input(type="submit", value="submit")
