@@ -17,20 +17,24 @@ block content
         option(value="6") More than 6 years
         option(value="8") More than 8 years
         option(value="10") More than 10 years
-      label(for="build-experiance") Do you have experiance building your own mini-quads?
-      input(type="radio", name="build-experiance", value="No", checked)
-      input(type="radio", name="build-experiance", value="Yes")
-      label(for="build-time") Will you source parts and build Lucy within two months?
-      .radio-container
-        label(class="radio-buttons", for="build-time-no") 
-          span(class="radio") No
-        input(class="radio-buttons", type="radio", name="build-time", value="No", id="build-time-no", checked) 
-      .radio-container
-        label(class="radio-buttons", for="build-time-yes")
-          span(class="radio") Yes
-        input(class="radio-buttons", type="radio", name="build-time", value="Yes", id="build-time-yes")
+      .check-wrap
+        label(for="build-experiance") Have you built your own mini-quad/s? 
+        .check-container
+          input(class="check-buttons", type="checkbox", name="build-time", value="No", id="build-experiance") 
+          label(class="check-buttons", for="build-experiance") 
+            span(class="check") 
+              span(class="check-no") No
+              span(class="check-yes") Yes
+      .check-wrap
+        label(for="build-time" id="hithere") Should you win, will you be able to source parts and build Lucy within two months? 
+        .check-container
+          input(class="check-buttons", type="checkbox", name="build-time", value="No", id="build-time") 
+          label(class="check-buttons", for="build-time") 
+            span(class="check") 
+              span(class="check-no") No
+              span(class="check-yes") Yes
       label(for="URL") Do you have a social media or youtube account with your FPV footage?
       input(type="url", name="URL", placeholder="www.youtube.com/")
-      label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why you're a good beta tester? Please tell about comps or community involvement.
-      textarea(name="longForm" form="usrform", cols="30", rows="7")
+      label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why you're a good beta tester?
+      textarea(name="longForm" form="usrform", cols="30", rows="7", placeholder="Please tell us about competitions or community involvement.")
       input(type="submit", value="Put me in the draw for beta testing")

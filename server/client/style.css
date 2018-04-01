@@ -532,7 +532,7 @@ footer .flexicons .gpl3 img {
   margin: 0 auto;
 }
 
-.reg-form-wrap form{
+.reg-form-wrap{
   width: 90%;
   margin: 0 auto;
   background: #333;
@@ -547,7 +547,8 @@ footer .flexicons .gpl3 img {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
   border: 1px solid #eaeaea;
-  color: #e16a36;
+  color: #0095cf;
+  display: block;
 }
 
 .reg-form-wrap label {
@@ -562,12 +563,12 @@ footer .flexicons .gpl3 img {
   height: 30px;
   background: #333;
   width: 100%;
-  color: #e16a36;
+  color: #0095cf;
   border: 1px solid #eaeaea;
   /*border-radius: 9px;*/
   font-family: Arial, Helvetica, sans-serif;
 }
-.reg-form-wrap input::placeholder {
+.reg-form-wrap input::placeholder, .reg-form-wrap textarea::placeholder {
   color: #e16a36;
   text-align: left;
 }
@@ -576,21 +577,40 @@ footer .flexicons .gpl3 img {
   border: 1px solid #0095cf;
   background: #0095cf;
   color: #eaeaea;
+  margin: 30px 0 40px;
 }
 
 .reg-form-wrap input[type="submit"]:hover {
   border: 1px solid #eaeaea;
 }
 
-input[type="radio"] {
+
+
+input[type="checkbox"] {
   display: none;
 }
 
-.radio-container {
-  position: relative;
+.check-wrap {
+  padding-top: 20px;
+  
 }
 
-.radio-container span::before, .radio-container span::after {
+.check-container {
+  position: relative;
+  left: 52px;
+  display: inline;
+}
+
+label[for="build-time"], label[for="build-experiance"] {
+  /*display: inline;*/
+  background: transparent;
+}
+
+.check-container .check-yes {
+  display: none;
+}
+
+.check-container span::before, .check-container span::after {
   content: '';
   position: absolute;
   top: 0;
@@ -598,26 +618,36 @@ input[type="radio"] {
   margin: auto;
 }
 
-.radio-container span.radio::before {
+.check-container span.check::before {
   left: -52px;
+  top: 0px;
   width: 45px;
   height: 25px;
   background-color: #ABAAC1;
   border-radius: 50px;
 }
 
-.radio-container span.radio::after {
+.check-container span.check::after {
   left: -49px;
+  top: 0px;
   width: 17px;
   height: 17px;
   border-radius: 10px;
-  background-color: #6C788A;
+  background-color: #e16a36;;
   transition: left .25s, background-color .25s;
 }
 
-input[type="radio"]:checked + label span.radio::after {
+input[type="checkbox"]:checked + label span.check::after {
   left: -27px;
-  background-color: #EBFF43;
+  background-color: #0095cf;
+}
+
+input[type="checkbox"]:checked ~ label span.check-no {
+  display: none;
+}
+
+input[type="checkbox"]:checked ~ label span.check-yes {
+  display: inline-block;
 }
 
 
