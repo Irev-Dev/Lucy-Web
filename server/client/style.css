@@ -532,6 +532,96 @@ footer .flexicons .gpl3 img {
   margin: 0 auto;
 }
 
+.reg-form-wrap form{
+  width: 90%;
+  margin: 0 auto;
+  background: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.reg-form-wrap textarea, .reg-form-wrap select {
+  width: 100%;
+  box-sizing: border-box;
+  background: #333;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  border: 1px solid #eaeaea;
+  color: #e16a36;
+}
+
+.reg-form-wrap label {
+  border: 0px;
+  background: #333;
+  padding: 1em 0 0 0;
+  text-align: left;
+}
+
+.reg-form-wrap input {
+  font-size: 20px;
+  height: 30px;
+  background: #333;
+  width: 100%;
+  color: #e16a36;
+  border: 1px solid #eaeaea;
+  /*border-radius: 9px;*/
+  font-family: Arial, Helvetica, sans-serif;
+}
+.reg-form-wrap input::placeholder {
+  color: #e16a36;
+  text-align: left;
+}
+
+.reg-form-wrap input[type="submit"] {
+  border: 1px solid #0095cf;
+  background: #0095cf;
+  color: #eaeaea;
+}
+
+.reg-form-wrap input[type="submit"]:hover {
+  border: 1px solid #eaeaea;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.radio-container {
+  position: relative;
+}
+
+.radio-container span::before, .radio-container span::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.radio-container span.radio::before {
+  left: -52px;
+  width: 45px;
+  height: 25px;
+  background-color: #ABAAC1;
+  border-radius: 50px;
+}
+
+.radio-container span.radio::after {
+  left: -49px;
+  width: 17px;
+  height: 17px;
+  border-radius: 10px;
+  background-color: #6C788A;
+  transition: left .25s, background-color .25s;
+}
+
+input[type="radio"]:checked + label span.radio::after {
+  left: -27px;
+  background-color: #EBFF43;
+}
+
+
+
 @media (min-width: 530px) {
   header {
     width:100%;

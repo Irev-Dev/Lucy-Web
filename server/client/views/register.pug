@@ -8,9 +8,29 @@ block content
       label(for="email") What's the best email to contact you?
       input(type="email", name="email", placeholder="Lucy.Parsons@riseup.net", required)
       label(for="years") How long have you been flying FPV?
-      input(type="number", name="years")
-      label(for="URL") Do you have a social media / youtube account with your FPV footage?
+      select(name="years")
+        option(value="0") Less than 1 year
+        option(value="1") More than 1 year
+        option(value="2") More than 2 years
+        option(value="3") More than 3 years
+        option(value="4") More than 4 years
+        option(value="6") More than 6 years
+        option(value="8") More than 8 years
+        option(value="10") More than 10 years
+      label(for="build-experiance") Do you have experiance building your own mini-quads?
+      input(type="radio", name="build-experiance", value="No", checked)
+      input(type="radio", name="build-experiance", value="Yes")
+      label(for="build-time") Will you source parts and build Lucy within two months?
+      .radio-container
+        label(class="radio-buttons", for="build-time-no") 
+          span(class="radio") No
+        input(class="radio-buttons", type="radio", name="build-time", value="No", id="build-time-no", checked) 
+      .radio-container
+        label(class="radio-buttons", for="build-time-yes")
+          span(class="radio") Yes
+        input(class="radio-buttons", type="radio", name="build-time", value="Yes", id="build-time-yes")
+      label(for="URL") Do you have a social media or youtube account with your FPV footage?
       input(type="url", name="URL", placeholder="www.youtube.com/")
-      label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why'd your a good beta tester? Please tell about comps or community involvement.
-      textarea(name="longForm" form="usrforma", cols="30", rows="10")
-      input(type="submit", value="submit")
+      label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why you're a good beta tester? Please tell about comps or community involvement.
+      textarea(name="longForm" form="usrform", cols="30", rows="7")
+      input(type="submit", value="Put me in the draw for beta testing")
