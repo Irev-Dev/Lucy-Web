@@ -12,18 +12,19 @@ const cl = new cloudinary.Cloudinary({ cloud_name: 'dwjfssfhq', secure: true });
 
 function hero(context) {
   const bannerImgs = [
-    `url(${cl.url('oslope5.svg')}) bottom left no-repeat,`,
+    // `url(${cl.url('oslope5.svg')}) bottom left no-repeat,`,
     `url(${cl.url('KUR033.Hero.DeepEtch2.png', {
       width: $('body').clientWidth,
       crop: 'scale',
       quality: 'auto',
       fetch_format: 'auto',
     })})top left no-repeat,`,
+    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M-.141-.37v299.046h211.115z" fill="%23e16a36"/></svg>') bottom left no-repeat,`,
     'radial-gradient(#000000a8, #000000ff 95%)',
   ];
   if (context === 'backgroundSize') {
     // shorthand for background not working, background-size must also be used
-    return '100% 100px, cover, cover';
+    return 'cover, 100% 100px, cover';
   }
   return bannerImgs.map(img => `${img}`).join('');
 }
@@ -44,7 +45,8 @@ function metalTile(context) {
 
 function orangeSlope(context) {
   const Imgs = [
-    `url(${cl.url('oslope.svg')}) top left no-repeat,`,
+    // `url(${cl.url('oslope.svg')}) top left no-repeat,`,
+    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M211.536 297.607V-1.438H-.436z" fill="%23e16a36"/></svg>') top left no-repeat,`,
     'radial-gradient(#000000a8, #000000ff 95%)',
   ];
   if (context === 'backgroundSize') {
