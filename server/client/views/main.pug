@@ -1,4 +1,44 @@
 extends layout
 
+
 block content
-  include ../dist/main.html
+  header( class="banner")
+    .title
+      h1 // Lucy //
+      p Brings speed and battery life gains by Disrupting conventional FPV design
+  main
+    .vid-pitch-wrapper
+      .inner-wrap
+        .places-wrap
+          .places
+            .places-content
+              p Sign up for a chance to win a free beta version of Lucy frame. Hurry, there's only
+              p( class="places-left") 153
+              p places left of round 1 beta testing
+              button Put me in the draw, I want one!
+        section( class="vid lite")
+          .VideoWrapper
+            iframe( src="https://player.vimeo.com/video/238244710?color=e16a36&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen)
+        
+        //-  one sentance pitch 
+        section( class="pitch dk")
+          .pitch__div
+            p( class="intro") 'Lucy' brings speed and battery life gains by,
+              span( class="secondline") Disrupting convention, Radicalizing FPV design
+    
+    .bigorthwrap
+      .orth-cta-wrapper
+          section(class="feat-img")
+          section(class="danger")
+              p More dangerous than a thousand rioters
+
+    section(class="featC")
+    section(class="bio")
+
+    //- include ../dist/main.html
+
+  footer(id="main-footer", class="grid")
+    h3 OPEN SOURCE DESIGN
+    a(href ="https://github.com/Irev-Dev/Lucy") github.com/Irev-Dev/Lucy
+    .flexicons
+  //- script( src="client.js")

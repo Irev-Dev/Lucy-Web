@@ -95,7 +95,7 @@ const cornerSvg = $('.pitch__div').style;
 const body = $('body').style;
 const bigOrthWrap = $('.bigorthwrap').style;
 const lucyOrtho = $('.feat-img').style;
-const secFeatureCards = $('.lite.featC');
+const secFeatureCards = $('.featC');
 const footerIcons = $('.flexicons');
 
 // HTML image injection
