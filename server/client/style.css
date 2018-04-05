@@ -69,8 +69,9 @@ p {
   float: right;
 }
 
-.icon-heart:hover {
-  transform: scale(1.2);
+.icon-heart-g-l:hover {
+  fill: red;
+  stroke: #000;  
 }
 
 .background-circle-stop1 {
