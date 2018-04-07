@@ -73,7 +73,7 @@ app.post('/reg',
   catchErrors(userController.setToken)
 );
 
-app.get('api/countdown', userController.countDown);
+app.get('/api/countdown', userController.countDown);
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 

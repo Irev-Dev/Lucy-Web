@@ -93,3 +93,8 @@ exports.subsciptionChange = async (req, res) => {
   req.flash('info', "We're sorry to see you go 😔 <br> You are now unsubscribed");
   res.redirect('/');
 };
+
+exports.countDown = async (req, res) => {
+  const count = await User.count();
+  res.json({ count, total: 300 });
+};

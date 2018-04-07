@@ -2,6 +2,7 @@
 // this will be where all the client code will live
 
 import cloudinary from 'cloudinary-core';
+import axios from 'axios';
 
 import { $, $$ } from './modules/bling'; // eslint-disable-line
 import { log } from 'util'; // eslint-disable-line
@@ -117,14 +118,20 @@ footerIcons.innerHTML = flexicons();
 // const submit2 = $('#submit2'); // document.querySelector('#submit2');
 // };
 
-$('#contribute').addEventListener('change', (e) => {
-  if (e.target.checked) {
-    $('#submit2').value = 'I Want To Contribute!';
-  } else {
-    $('#submit2').value = 'Sign Me Up! (updates only)';
-  }
-});
-/*
 
-//};
-*/
+function countDown() {
+  axios.get('/api/countdown').then((res) => {
+    $('.places-left').innerHTML = res.data.total - res.data.count;
+    // console.log(res.data);
+  }).catch((err) => {
+    console.error(err);
+  });
+}
+
+countDown();
+
+function startCountDown() {
+  setInterval(countDown, 10000);
+}
+
+startCountDown();
