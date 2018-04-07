@@ -71,8 +71,8 @@ function lucyOrth(context) {
 
 function featureCards() {
   const feaImgs = [
-    { className: 'lift', src: cl.url('lucydrone/card1.png'), alt: 'did this work' },
-    { className: 'drag', src: cl.url('lucydrone/card2'), alt: 'yes no?' },
+    { className: 'lift', src: cl.url('lucydrone/card1b'), alt: 'lucy Kwad flying with positive lift' },
+    { className: 'drag', src: cl.url('lucydrone/card2b'), alt: 'lucy Kwad flying with minimal air drag' },
   ];
   return feaImgs.map(img => `<img class="${img.className}" src="${img.src}" alt="${img.alt}">`).join('');
 }
