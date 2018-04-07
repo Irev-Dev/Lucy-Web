@@ -2,13 +2,13 @@ extends layout
 
 block content
   .reg-form-wrap
-    form(action="/add2", method="post" id="usrform")
+    form(action="/reg", method="post" id="usrform")
       label(for="name") What do we call you?
       input(type="text", name="name", placeholder="psudoname", required)
       label(for="email") What's the best email to contact you?
       input(type="email", name="email", placeholder="Lucy.Parsons@riseup.net", required)
-      label(for="years") How long have you been flying FPV?
-      select(name="years")
+      label(for="yearsFlying") How long have you been flying FPV?
+      select(name="yearsFlying")
         option(value="0") Less than 1 year
         option(value="1") More than 1 year
         option(value="2") More than 2 years
@@ -20,7 +20,7 @@ block content
       .check-wrap
         label(for="build-experiance") Have you built your own mini-quad/s? 
         .check-container
-          input(class="check-buttons", type="checkbox", name="build-time", value="No", id="build-experiance") 
+          input(class="check-buttons", type="checkbox", name="build-experiance", id="build-experiance") 
           label(class="check-buttons", for="build-experiance") 
             span(class="check") 
               span(class="check-no") No
@@ -28,13 +28,13 @@ block content
       .check-wrap
         label(for="build-time" id="hithere") Should you win, will you be able to source parts and build Lucy within two months? 
         .check-container
-          input(class="check-buttons", type="checkbox", name="build-time", value="No", id="build-time") 
+          input(class="check-buttons", type="checkbox", name="build-time", id="build-time") 
           label(class="check-buttons", for="build-time") 
             span(class="check") 
               span(class="check-no") No
               span(class="check-yes") Yes
-      label(for="URL") Do you have a social media or youtube account with your FPV footage?
-      input(type="url", name="URL", placeholder="www.youtube.com/")
+      label(for="socialURL") Do you have a social media or youtube account with your FPV footage?
+      input(type="url", name="socialURL", placeholder="www.youtube.com/")
       label(for="longForm") Anthing else you want to mention about why you want try out the Lucy frame or why you're a good beta tester?
       textarea(name="longForm" form="usrform", cols="30", rows="7", placeholder="Please tell us about competitions or community involvement.")
       input(type="submit", value="Put me in the draw for beta testing")

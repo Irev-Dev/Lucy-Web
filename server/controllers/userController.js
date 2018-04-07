@@ -24,7 +24,22 @@ exports.validateForm = (req, res, next) => {
 };
 
 exports.setToken = async (req, res, next) => {
-  const user = new User({ email: req.body.email, name: req.body.name });
+  const checkUser = await User.findOne({ email: req.body.email });
+  if (checkUser) {
+    req.flash('error', '⚠️ Whoops, that email has already been submitted. 😱');
+    res.redirect('/reg');
+    return;
+  }
+  console.log('yearsFlying',req.body.yearsFlying);
+  const user = new User({
+    email: req.body.email,
+    name: req.body.name,
+    yearsFlying: req.body.yearsFlying,
+    buildExperiance: req.body['build-experiance'] === 'on' ? true : false,
+    buildTime: req.body['build-time'] === 'on' ? true : false,
+    socialURL: req.body.socialURL,
+    longForm: req.body.longForm,
+  });
   // set verify token
   user.verifyToken = crypto.randomBytes(20).toString('hex');
   user.date = Date.now();
@@ -51,7 +66,7 @@ exports.setToken = async (req, res, next) => {
 
 exports.verifyToken = async (req, res, next) => {
   const user = await User.findOne({ verifyToken: req.params.token });
-  if(!user) {
+  if (!user) {
     req.flash('error', '⚠️ Whoops, there seems to be a problem, we were unable to verify your email. 😱');
     res.redirect('/');
     return;
@@ -65,7 +80,7 @@ exports.verifyToken = async (req, res, next) => {
 
 exports.subsciptionChange = async (req, res) => {
   const user = await User.findOne({ subscribeToken: req.query.token });
-  if(!user) {
+  if (!user) {
     req.flash('error', "⚠️ Whoops, something went wrong️, we were unable to verify your account and therefore not able to change your subscription. 😱");
     res.redirect('/');
     return;

@@ -17,7 +17,7 @@ const expressValidator = require('express-validator');
 const userController = require('./controllers/userController');
 const { catchErrors } = require('./handlers/errorHandlers');
 
-// create our Express app
+// create our Express app 
 const app = express();
 
 // view engine setup
@@ -68,11 +68,12 @@ app.get('/reg', (req, res) => {
   res.render('register', {});
 });
 
-
-app.post('/add',
+app.post('/reg',
   userController.validateForm,
   catchErrors(userController.setToken)
 );
+
+app.get('api/countdown', userController.countDown);
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 
