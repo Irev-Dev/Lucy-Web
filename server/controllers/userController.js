@@ -53,7 +53,7 @@ exports.setToken = async (req, res, next) => {
     subject: 'Please Verify',
     resetURL,
     subscribeURL,
-    filename: 'Verify', // wesbos's file name used for PUG templates
+    filename: 'verify', // wesbos's file name used for PUG templates
   });
   req.flash('success', `<div>
   <h3>Thanks for your support! 🙌</h3>
