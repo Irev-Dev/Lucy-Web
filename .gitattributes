@@ -9,6 +9,10 @@
 *.png binary
 *.ttf binary
 
+#ignore some of the css so that github identifies as js not css
+server/client/style.css linguist-vendored
+server/client/dist/* linguist-vendored
+
 
 ### note
 ### after doing this sometimes helpfull to remove gitindex and rescan working dirrectory by running
