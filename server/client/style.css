@@ -709,7 +709,10 @@ input[type="checkbox"]:checked ~ label span.check-yes {
   display: inline-block;
 }
 
-
+.inner .four04 {
+  text-align: center;
+  background: #333;
+}
 
 @media (min-width: 530px) {
   header {
@@ -758,6 +761,8 @@ input[type="checkbox"]:checked ~ label span.check-yes {
   }
 
 }
+
+
 
 @media (min-width: 900px) {
 

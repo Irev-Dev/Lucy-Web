@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 const expressValidator = require('express-validator');
 // const routes = require('./routes/index');
 // const helpers = require('./helpers');
-// const errorHandlers = require('./handlers/errorHandlers');
+const errorHandlers = require('./handlers/errorHandlers');
 // const mail = require('../handlers/mail');
 
 const userController = require('./controllers/userController');
@@ -78,5 +78,20 @@ app.get('/api/countdown', userController.countDown);
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 
 app.get('/subscription', catchErrors(userController.subsciptionChange));
+
+// If that above routes didnt work, we 404 them and forward to error handler
+app.use(errorHandlers.notFound);
+
+// One of our error handlers will see if these errors are just validation errors
+app.use(errorHandlers.flashValidationErrors);
+
+// Otherwise this was a really bad error we didn't expect! Shoot eh
+if (process.env.NODE_ENV === 'development') {
+  /* Development Error Handler - Prints stack trace */
+  app.use(errorHandlers.developmentErrors);
+}
+
+// production error handler
+app.use(errorHandlers.productionErrors);
 
 module.exports = app;
