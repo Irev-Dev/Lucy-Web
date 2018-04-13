@@ -46,4 +46,4 @@ const testDB = async () => {
   // await User.remove(); // Purge the db, DON'T leave in production code!!!!
 };
 
-testDB();
+// testDB();

@@ -11,7 +11,8 @@
     "build-html": "parcel build -d server/client/dist server/client/main.html --public-url ./",
     "build": "concurrently \"npm run build-js\" \"npm run build-css\" ",
     "start": "node ./server/start.js",
-    "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name"
+    "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name",
+    "db-edit": "node ./server/dbEdit.js"
   },
   "repository": {
     "type": "git",

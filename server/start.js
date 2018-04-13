@@ -5,7 +5,7 @@ if (require('dotenv').config({ path: path.join('server', 'environment.env') }).e
 }
 
 const mongoose = require('mongoose');
-const validator = require('validator');
+// const validator = require('validator');
 
 const connectString = process.env.DATABASE + process.env.NODE_ENV;
 
