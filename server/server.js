@@ -17,11 +17,11 @@ const errorHandlers = require('./handlers/errorHandlers');
 const userController = require('./controllers/userController');
 const { catchErrors } = require('./handlers/errorHandlers');
 
-// create our Express app 
+// create our Express app
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'client', 'views')); //pug files folder
+app.set('views', path.join(__dirname, 'client', 'views')); // pug files folder
 app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
 
 // public files
@@ -68,18 +68,19 @@ app.get('/reg', (req, res) => {
   res.render('register', {});
 });
 
-app.post('/reg',
+app.post(
+  '/reg',
   userController.validateForm,
-  catchErrors(userController.setToken)
+  catchErrors(userController.setToken),
 );
 
 app.get('/api/countdown', userController.countDown);
 
 app.get('/verify/:token', catchErrors(userController.verifyToken));
 
-app.get('/subscription', catchErrors(userController.subsciptionChange));
+app.get('/subscription', catchErrors(userController.subscriptionChange));
 
-// If that above routes didnt work, we 404 them and forward to error handler
+// If that above routes didn't work, we 404 them and forward to error handler
 app.use(errorHandlers.notFound);
 
 // One of our error handlers will see if these errors are just validation errors

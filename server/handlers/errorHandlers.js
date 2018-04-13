@@ -48,7 +48,7 @@ exports.developmentErrors = (err, req, res, next) => {
   const errorDetails = {
     message: err.message,
     status: err.status,
-    stackHighlighted: err.stack.replace(/[a-z_-\d]+.js:\d+:\d+/gi, '<mark>$&</mark>')
+    stackHighlighted: err.stack.replace(/[a-z_-\d]+.js:\d+:\d+/gi, '<mark>$&</mark>'),
   };
   res.status(err.status || 500);
   res.format({
@@ -56,7 +56,7 @@ exports.developmentErrors = (err, req, res, next) => {
     'text/html': () => {
       res.render('error', errorDetails);
     }, // Form Submit, Reload the page
-    'application/json': () => res.json(errorDetails) // Ajax call, send JSON back
+    'application/json': () => res.json(errorDetails), // Ajax call, send JSON back
   });
 };
 
@@ -64,13 +64,13 @@ exports.developmentErrors = (err, req, res, next) => {
 /*
   Production Error Handler
 
-  No stacktraces are leaked to user
+  No stack traces are leaked to user
 */
 exports.productionErrors = (err, req, res, next) => {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
     status: err.status,
-    error: {}
+    error: {},
   });
 };

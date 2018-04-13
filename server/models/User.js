@@ -38,16 +38,12 @@ userSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model('User', userSchema);
 
-
-
-const testdb = async() => {
+const testDB = async() => {
   const User = mongoose.model('User');
   let users = await User.find();
   console.log(users);
-  
-  // await User.remove(); // Purge the db, DON'T leave in production code!!!!
-  // users = await User.find();
-  // console.log(users);
-}
 
-testdb();
+  // await User.remove(); // Purge the db, DON'T leave in production code!!!!
+};
+
+testDB();

@@ -30,7 +30,6 @@ exports.setToken = async (req, res, next) => {
     res.redirect('/reg');
     return;
   }
-  console.log('yearsFlying',req.body.yearsFlying);
   const user = new User({
     email: req.body.email,
     name: req.body.name,
@@ -53,7 +52,7 @@ exports.setToken = async (req, res, next) => {
     subject: 'Please Verify',
     resetURL,
     subscribeURL,
-    filename: 'verify', // wesbos's file name used for PUG templates
+    filename: 'verify', // Wesbos's file name used for PUG templates
   });
   req.flash('success', `<div>
   <h3>Thanks for your support! 🙌</h3>
@@ -78,10 +77,13 @@ exports.verifyToken = async (req, res, next) => {
   res.redirect('/');
 };
 
-exports.subsciptionChange = async (req, res) => {
+exports.subscriptionChange = async (req, res) => {
   const user = await User.findOne({ subscribeToken: req.query.token });
   if (!user) {
-    req.flash('error', "⚠️ Whoops, something went wrong️, we were unable to verify your account and therefore not able to change your subscription. 😱");
+    req.flash(
+      'error',
+      '⚠️ Whoops, something went wrong️, we were unable to verify your account and therefore not able to change your subscription. 😱',
+    );
     res.redirect('/');
     return;
   }

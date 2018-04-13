@@ -13,7 +13,6 @@ const cl = new cloudinary.Cloudinary({ cloud_name: 'dwjfssfhq', secure: true });
 
 function hero(context) {
   const bannerImgs = [
-    // `url(${cl.url('oslope5.svg')}) bottom left no-repeat,`,
     `url(${cl.url('KUR033.Hero.DeepEtch2.png', {
       width: $('body').clientWidth,
       crop: 'scale',
@@ -112,12 +111,6 @@ footerIcons.innerHTML = flexicons();
   lucyOrtho[context] = lucyOrth(context);
   return null;
 });
-
-// document.onreadystatechange = () => {
-// const htlpChk = $('#contribute'); // document.querySelector('#contribute');
-// const submit2 = $('#submit2'); // document.querySelector('#submit2');
-// };
-
 
 function countDown() {
   axios.get('/api/countdown').then((res) => {

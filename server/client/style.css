@@ -57,7 +57,7 @@ p {
   color: #eaeaea;
 }
 
-/* avator / icon */
+/* avatar / icon */
 .logo {
   height: 50px;
   background: linear-gradient(192deg,  #0095cf 30%, #e16a36 80%);
@@ -173,31 +173,6 @@ p {
   margin: 0; 
 }
 
-
-/* header */
-/*this was my own flash before I decided to use the node ones*/
-/*.flash_wrap {
-  display: none;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(#000000a8, #000000ff 95%);
-  background-size:cover;
-  z-index: 100;
-}
-
-.flash {
-  text-align: center;
-  box-sizing: border-box;
-  width: 90%;
-  max-width: 1200px;
-  padding: 30px;
-  background: #333;
-  border: 1px solid #eaeaea;
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 100px auto;
-}*/
-
 .flash h3 {
   padding-top: 0;
   font-size: 30px;
@@ -212,7 +187,6 @@ p {
 header {
   height: 270px;
 }
-
 
 .title {
   width: 50%;
@@ -230,7 +204,6 @@ header {
   padding: 0;
   margin: 0;
 }
-
 
 /* video section */
 .inner-wrap {
@@ -298,15 +271,6 @@ header {
   /*color: rgb(201, 201, 201);*/
 }
 
-
-/*.places-left {
-  background: #e16a36;
-  color: #0000;
-
-}*/
-
-
-
 .vid, .pitch {
   background-color: #00000000;
 }
@@ -369,19 +333,11 @@ header {
   text-align: center;
 }
 
-/* feature image */
-/*.orth-cta-wrapper {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}*/
-
 .feat-img {
   height: 270px;
 }
 
 /* danger */
-
 .danger p {
   margin: 0 auto;
   font-size: 20px;
@@ -391,60 +347,10 @@ header {
   max-width: 280px;
 }
 
-/* call to action 1  #121112*/
-/*.cta1 {
-  background-color: #00000000;
-}*/
-
-/*.cta1 form {
-  width: 90%;
-  max-width: 1800px;
-  margin: 0 auto;
-  padding-bottom: 20px;
-  position: relative;
-  bottom: 10px;
-  padding-bottom: 50px;
-}*/
-
-/*.cta1 input[type="email"], .cta1 input[type="submit"], .cta1 input[name="name"] {
-  display: inline-block;
-  box-sizing: border-box;
-  text-decoration: none;
-  padding: 0.6em 0;
-}*/
-
-/*.cta1 input[type="email"], .cta1 input[name="name"] {
-  width:100%;
-  border: 3px solid #0095cf;
-  margin: 0;
-  background-color: #eaeaea33;
-  color: #eaeaea;
-  margin-top:  0px;
-  text-align: center;
-}*/
-
-/*.cta1 input[type="email"]:hover, .cta1 input[type="email"]:focus, .cta1 input[name="name"]:focus {
-  background-color: #eaeaeaaa;
-  color: #eaeaea;
-}*/
-
 ::placeholder {
   color: rgb(47, 222, 253);
   text-align: center;
 }
-
-/*.cta1 input[type="submit"] {
-  width:100%;
-  background: #0095cf;
-  border: 3px solid #0095cf;
-  margin-top: 10px
-}*/
-
-/*.cta1 input[type="submit"]:hover {
-  background: rgb(69, 208, 255);
-  color: rgb(201, 201, 201);
-}*/
-
 
 /* feature cards */
 .featC {
@@ -516,14 +422,6 @@ header {
 .bio-inner button:hover {
   background: rgb(69, 208, 255);
 }
-
-
-
-/*.cta2 input:checked + label:before {
-  content: '👍🏾';
-}*/
-
-
 
 label {
   display: inline-block;
@@ -643,8 +541,6 @@ footer .flexicons .gpl3 img {
   border: 1px solid #eaeaea;
 }
 
-
-
 input[type="checkbox"] {
   display: none;
 }
@@ -730,9 +626,7 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     font-size: 3.2vw;
   }
 
-  
   /* vid pitch wrapper */
-  
   .pitch div {
     font-size: 2.5vw;
   }
@@ -740,15 +634,12 @@ input[type="checkbox"]:checked ~ label span.check-yes {
   .secondline {
     display: block;
   }
-  
- 
 
   .feat-img {
     width: 100%;
     height: 56vw;
     max-height: 750px;
   }
-
 
   .bio svg {
     height: 200px;
@@ -759,10 +650,7 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     float: right;
     width: calc(100% - 230px);
   }
-
 }
-
-
 
 @media (min-width: 900px) {
 
@@ -770,7 +658,6 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     font-size: 6vw;
     padding-top: 20vw;
   }
-
 
   .vid-pitch-wrapper {
     width: 100%;
@@ -794,7 +681,6 @@ input[type="checkbox"]:checked ~ label span.check-yes {
   .pitch div {
     font-size: 30px;
   }
-
   
   .places-wrap /*.pitch*/ {
     align-self: center;
@@ -815,7 +701,6 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     flex-direction: column;
     justify-content: space-between;
   }
-
 
   .orth-cta-wrapper {
     max-width: 1200px;
