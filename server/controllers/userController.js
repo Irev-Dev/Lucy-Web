@@ -63,18 +63,32 @@ exports.setToken = async (req, res) => {
   res.redirect('/');
 };
 
-exports.verifyToken = async (req, res) => {
-  const user = await User.findOne({ verifyToken: req.params.token });
-  if (!user) {
-    req.flash('error', '⚠️ Whoops, there seems to be a problem, we were unable to verify your email. 😱');
-    res.redirect('/');
-    return;
-  }
-  user.verifyDate = Date.now();
-  user.verifyToken = undefined;
-  await user.save();
+function flashAlreadyVerified(req, res) {
+  req.flash('info', 'You have already verified your email!');
+  res.redirect('/');
+}
+
+function flashVerifyError(req, res) {
+  req.flash('error', '⚠️ Whoops, there seems to be a problem, we were unable to verify your email. 😱');
+  res.redirect('/');
+}
+
+function flashVerifySuccess(req, res) {
   req.flash('success', 'Email verified, nice one. 👌');
   res.redirect('/');
+}
+
+exports.verifyEmail = async (req, res) => {
+  const user = await User.findOne({ verifyToken: req.params.token });
+  if (!user) {
+    flashVerifyError(req, res);
+  } else if (user.verifyDate) {
+    flashAlreadyVerified(req, res);
+  } else if (user) {
+    user.verifyDate = Date.now();
+    await user.save();
+    flashVerifySuccess(req, res);
+  }
 };
 
 exports.subscriptionChange = async (req, res) => {
@@ -108,8 +122,9 @@ function CachedCountDown() {
   };
 }
 
-const cachedCountDown = new CachedCountDown();
+exports.cachedCountDown = new CachedCountDown();
 
 exports.countDown = async (req, res) => {
-  res.json({ count: await cachedCountDown.getCount(), total: 300 });
+  const count = await this.cachedCountDown.getCount();
+  res.json({ count, total: 300 });
 };

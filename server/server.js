@@ -61,8 +61,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', (req, res) => {
-  res.render('main', {});
+app.get('/', async (req, res) => {
+  res.render('main', { countDown: 300 - await userController.cachedCountDown.getCount() });
 });
 
 app.get('/reg', (req, res) => {
@@ -77,7 +77,7 @@ app.post(
 
 app.get('/api/countdown', userController.countDown);
 
-app.get('/verify/:token', catchErrors(userController.verifyToken));
+app.get('/verify/:token', catchErrors(userController.verifyEmail));
 
 app.get('/subscription', catchErrors(userController.subscriptionChange));
 

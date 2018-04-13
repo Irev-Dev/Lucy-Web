@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const moment = require('moment');
+// const moment = require('moment');
 
 mongoose.Promise = global.Promise;
 const validator = require('validator');
@@ -38,7 +38,7 @@ userSchema.plugin(mongodbErrorHandler);
 
 module.exports = mongoose.model('User', userSchema);
 
-const testDB = async() => {
+const testDB = async () => {
   const User = mongoose.model('User');
   let users = await User.find();
   console.log(users);
