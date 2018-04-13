@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const promisify = require('es6-promisify');
+// const promisify = require('es6-promisify');
 const crypto = require('crypto');
 const mail = require('../handlers/mail');
 const moment = require('moment');
@@ -18,12 +18,12 @@ exports.validateForm = (req, res, next) => {
   });
   const errors = req.validationErrors();
   if (errors) {
-    console.log('Email error!', errors);
+    console.error('Email error!', errors);
   }
   next();
 };
 
-exports.setToken = async (req, res, next) => {
+exports.setToken = async (req, res) => {
   const checkUser = await User.findOne({ email: req.body.email });
   if (checkUser) {
     req.flash('error', '⚠️ Whoops, that email has already been submitted. 😱');
@@ -34,8 +34,8 @@ exports.setToken = async (req, res, next) => {
     email: req.body.email,
     name: req.body.name,
     yearsFlying: req.body.yearsFlying,
-    buildExperiance: req.body['build-experiance'] === 'on' ? true : false,
-    buildTime: req.body['build-time'] === 'on' ? true : false,
+    buildExperiance: req.body['build-experiance'] === 'on',
+    buildTime: req.body['build-time'] === 'on',
     socialURL: req.body.socialURL,
     longForm: req.body.longForm,
   });
@@ -63,7 +63,7 @@ exports.setToken = async (req, res, next) => {
   res.redirect('/');
 };
 
-exports.verifyToken = async (req, res, next) => {
+exports.verifyToken = async (req, res) => {
   const user = await User.findOne({ verifyToken: req.params.token });
   if (!user) {
     req.flash('error', '⚠️ Whoops, there seems to be a problem, we were unable to verify your email. 😱');
