@@ -96,7 +96,20 @@ exports.subscriptionChange = async (req, res) => {
   res.redirect('/');
 };
 
+function CachedCountDown() {
+  let count = 1;
+  let date = 0;
+  this.getCount = async () => {
+    if ((date + 10000) < Date.now()) {
+      date = Date.now();
+      count = await User.count();
+    }
+    return count;
+  };
+}
+
+const cachedCountDown = new CachedCountDown();
+
 exports.countDown = async (req, res) => {
-  const count = await User.count();
-  res.json({ count, total: 300 });
+  res.json({ count: await cachedCountDown.getCount(), total: 300 });
 };
