@@ -3,7 +3,17 @@ html
   head
     title Lucy Kwad
     link(rel='stylesheet', href='style.css')
+    meta(name="google-site-verification",content="quEc09nsjbW4l7RpHjlncw8zBTFUbZIfOpMGg3h6Hz0")
     meta(name="viewport" content="width=device-width, initial-scale=1")
+    script(async, src=`https://www.googletagmanager.com/gtag/js?id=${locals.googleAnalyticsID}`)
+    script. 
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){
+        dataLayer.push(arguments);
+      } 
+      gtag('js', new Date()); 
+      gtag('config', '#{locals.googleAnalyticsID}');
+
   body
 
     .logo
