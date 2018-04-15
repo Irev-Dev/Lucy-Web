@@ -200,7 +200,8 @@ header {
   padding:100px 0 0 0;
 }
 
-.title p{
+.title h2{
+  font-size: 16px;
   padding: 0;
   margin: 0;
 }
@@ -213,6 +214,7 @@ header {
 }
 
 .places-wrap {
+  font-family: 'Courier New', Courier, monospace;
   width: 100%;
   /*max-width: 1200px;
   margin: 0 auto;*/
@@ -242,11 +244,13 @@ header {
 }
 
 .places-left {
-  background: linear-gradient(150deg, #e16a36 45%, #0095cf 55%);
-  font-size: 72px;
+  /* background: linear-gradient(150deg, #e16a36 45%, #0095cf 55%);
   font-weight: bold;
   background-clip: text;
-  color: transparent;
+  color: transparent; */
+  font-family: HeavyEquipment, 'Courier New', Courier, monospace;
+  font-size: 72px;
+  color: #0095cf;
   margin: 0;
   padding: 0;
   line-height: 1;
@@ -255,7 +259,8 @@ header {
 }
 
 .places-wrap button {
-  font-family: HeavyEquipment ,Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
   display: block;
   width: 100%;
   /*margin: 0 auto;*/
@@ -338,13 +343,17 @@ header {
 }
 
 /* danger */
-.danger p {
+.danger h3 {
+  font-family: 'Courier New', Courier, monospace;
+  /* font-family: Helvetica, Arial, sans-serif; */
+  font-weight: normal;
   margin: 0 auto;
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
   padding: 2em;
   padding-top: 0;
-  max-width: 280px;
+  max-width: 450px;
+
 }
 
 ::placeholder {
@@ -388,7 +397,7 @@ header {
 }
 
 .bio {
-
+  font-family: 'Courier New', Courier, monospace;
   background: radial-gradient(#000000a8, #000000ff 95%);
 }
 
@@ -408,7 +417,8 @@ header {
 }
 
 .bio-inner button {
-  font-family: HeavyEquipment ,Arial, Helvetica, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
   display: block;
   width: 100%;
   /*margin: 0 auto;*/
@@ -454,6 +464,10 @@ footer p {
   color: #e16a36;
   padding-top: 0;
   padding-bottom: 50px;
+}
+
+.git-link {
+  font-family: 'Courier New', Courier, monospace;
 }
 
 footer .flexicons {
@@ -618,12 +632,12 @@ input[type="checkbox"]:checked ~ label span.check-yes {
   }
 
   .title h1{
-    font-size: 8vw;
-    padding:30vw 0 0 0;
+    font-size: minmax(8vw,30px);
+    padding:25vw 0 0 0;
   }
 
-  .title p  {
-    font-size: 3.2vw;
+  .title h2  {
+    font-size: 3.15vw;
   }
 
   /* vid pitch wrapper */
@@ -637,8 +651,8 @@ input[type="checkbox"]:checked ~ label span.check-yes {
 
   .feat-img {
     width: 100%;
-    height: 56vw;
-    max-height: 750px;
+    height: 53vw;
+    max-height: 655px;
   }
 
   .bio svg {
@@ -706,23 +720,31 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   }
 
   .feat-img {
-    grid-column: 2 / span 5;
+    /* width:120%; */
+    grid-column: 3 / span 5;
     grid-row: 1;
   }
 
   .danger {
     align-self: center;
-    grid-column: 1 / span 2;
+    grid-column: 1 / span 3;
     grid-row: 1;
   }
 
   .bio svg {
     height: 200px;
     width: 200px;
+  }
+
+}
+
+@media (min-width: 1650px) {
+  .banner {
+    background-size: contain, 100% 100px, cover !important;
   }
 
 }

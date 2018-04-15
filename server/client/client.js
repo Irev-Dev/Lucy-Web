@@ -1,5 +1,5 @@
 
-// this will be where all the client code will live
+// this will be where all the client code will be when live
 
 import cloudinary from 'cloudinary-core';
 import axios from 'axios';
@@ -19,11 +19,12 @@ function hero(context) {
       quality: 'auto',
       fetch_format: 'auto',
     })})top left no-repeat,`,
-    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M-.141-.37v299.046h211.115z" fill="%23e16a36"/></svg>') bottom left no-repeat,`,
+    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M-.141-.37v299.046h211.115z" fill="%23e16a36"/></svg>') bottom left no-repeat,`, // eslint-disable-line
     'radial-gradient(#000000a8, #000000ff 95%)',
   ];
   if (context === 'backgroundSize') {
-    // shorthand for background not working, background-size must also be used
+    // The shorthand for background dose not work when applying the background size,
+    // therefore background-size must also be used
     return 'cover, 100% 100px, cover';
   }
   return bannerImgs.map(img => `${img}`).join('');
@@ -46,7 +47,7 @@ function metalTile(context) {
 function orangeSlope(context) {
   const Imgs = [
     // `url(${cl.url('oslope.svg')}) top left no-repeat,`,
-    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M211.536 297.607V-1.438H-.436z" fill="%23e16a36"/></svg>') top left no-repeat,`,
+    `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="210mm" height="297mm" viewBox="0 0 210 297" preserveAspectRatio="none"><path d="M211.536 297.607V-1.438H-.436z" fill="%23e16a36"/></svg>') top left no-repeat,`, // eslint-disable-line
     'radial-gradient(#000000a8, #000000ff 95%)',
   ];
   if (context === 'backgroundSize') {
@@ -115,7 +116,6 @@ footerIcons.innerHTML = flexicons();
 function countDown() {
   axios.get('/api/countdown').then((res) => {
     $('.places-left').innerHTML = res.data.total - res.data.count;
-    // console.log(res.data);
   }).catch((err) => {
     console.error(err);
   });
