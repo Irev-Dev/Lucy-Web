@@ -92,7 +92,6 @@ function flexicons() {
 }
 
 const bannerImgs = $('.banner').style;
-const cornerSvg = $('.pitch__div').style;
 const body = $('body').style;
 const bigOrthWrap = $('.bigorthwrap').style;
 const lucyOrtho = $('.feat-img').style;
@@ -105,9 +104,9 @@ footerIcons.innerHTML = flexicons();
 
 // CSS image injection - Unable to use shorthand to set background-size
 ['background', 'backgroundSize'].map((context) => {
-  bannerImgs[context] = hero(context);
-  cornerSvg[context] = corners(context);
   body[context] = metalTile(context);
+  bannerImgs[context] = hero(context);
+  bigOrthWrap[context] = corners(context);
   bigOrthWrap[context] = orangeSlope(context);
   lucyOrtho[context] = lucyOrth(context);
   return null;

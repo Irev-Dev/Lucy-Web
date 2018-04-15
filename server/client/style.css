@@ -276,7 +276,7 @@ header {
   /*color: rgb(201, 201, 201);*/
 }
 
-.vid, .pitch {
+.vid {
   background-color: #00000000;
 }
 
@@ -308,11 +308,6 @@ header {
   height: 100%;
 } 
 
-/* pitch */
-.pitch {
-  display: none;
-}
-
 .nsfw {
   display: none;
 }
@@ -322,21 +317,6 @@ header {
 }
 
 
-.pitch__div {
-  padding: 10px 0;
-  margin: 0 5%;
-}
-
-.pitch .intro {
-  padding: 0 0px 5px 0;
-  text-align: center;
-}
-
-.pitch .points {
-  padding: 0;
-  padding-bottom: 20px;
-  text-align: center;
-}
 
 .feat-img {
   height: 270px;
@@ -352,7 +332,7 @@ header {
   text-align: center;
   padding: 2em;
   padding-top: 0;
-  max-width: 450px;
+  max-width: 470px;
 
 }
 
@@ -640,11 +620,6 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     font-size: 3.15vw;
   }
 
-  /* vid pitch wrapper */
-  .pitch div {
-    font-size: 2.5vw;
-  }
-
   .secondline {
     display: block;
   }
@@ -691,12 +666,8 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     grid-row: 1;
     width: 100%;
   }
-
-  .pitch div {
-    font-size: 30px;
-  }
   
-  .places-wrap /*.pitch*/ {
+  .places-wrap {
     align-self: center;
     grid-column: 5 / span 2;
     height: calc(100% * 430 / 500);
@@ -735,6 +706,10 @@ input[type="checkbox"]:checked ~ label span.check-yes {
     grid-row: 1;
   }
 
+  .danger h3 {
+    font-size: 24px;
+  }
+
   .bio svg {
     height: 200px;
     width: 200px;
@@ -744,7 +719,7 @@ input[type="checkbox"]:checked ~ label span.check-yes {
 
 @media (min-width: 1650px) {
   .banner {
-    background-size: contain, 100% 100px, cover !important;
+    background-size: auto 110%, 100% 100px, cover !important;
   }
 
 }
