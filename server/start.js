@@ -1,11 +1,4 @@
-// import environmental variables from our variables.env file
-const path = require('path');
-if (require('dotenv').config({ path: path.join('server', 'environment.env') }).error) {
-  console.log('cant get environment variables, please check you have defined environment.env file');
-}
-
 const mongoose = require('mongoose');
-// const validator = require('validator');
 
 const connectString = process.env.DATABASE + process.env.NODE_ENV;
 

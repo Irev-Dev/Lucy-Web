@@ -10,7 +10,7 @@
     "build-css": "concurrently \"parcel build -d server/client/dist server/client/normalise.css --public-url ./\" \"parcel build -d server/client/dist server/client/style.css --public-url ./ \" ",
     "build-html": "parcel build -d server/client/dist server/client/main.html --public-url ./",
     "build": "concurrently \"npm run build-js\" \"npm run build-css\" ",
-    "start": "node ./server/start.js",
+    "start": "node -r dotenv/config ./server/start.js dotenv_config_path=./server/environment.env",
     "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name",
     "db-edit": "node ./server/dbEdit.js"
   },
