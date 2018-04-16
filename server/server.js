@@ -16,6 +16,7 @@ const errorHandlers = require('./handlers/errorHandlers');
 
 const userController = require('./controllers/userController');
 const { catchErrors } = require('./handlers/errorHandlers');
+const { responseCache } = require('./handlers/cacheHandlers');
 
 // create our Express app
 const app = express();
@@ -62,11 +63,16 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/', async (req, res) => {
-  res.render('main', { countDown: 300 - await userController.cachedCountDown.getCount() });
-});
+// caching the main page's response
+app.get(
+  '/',
+  responseCache(20 * 1000), // cache body data for 20 seconds
+  // async (req, res) => res.render('main', { countDown: 300 - await userController.cachedCountDown.getCount() }),
+     async (req, res) => res.render('main', { countDown: 300 - await userController.uncachedCountdown()}),
+);
 
-app.get('/reg', (req, res) => {
+// caching the reg get response
+app.get('/reg', responseCache(5000), (req, res) => {
   res.render('register', {});
 });
 
@@ -76,7 +82,8 @@ app.post(
   catchErrors(userController.setToken),
 );
 
-app.get('/api/countdown', userController.countDown);
+// caching the api response
+app.get('/api/countdown', responseCache(9000), userController.countDown);
 
 app.get('/verify/:token', catchErrors(userController.verifyEmail));
 

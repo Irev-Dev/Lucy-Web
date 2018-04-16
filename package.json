@@ -49,6 +49,7 @@
     "html-to-text": "^4.0.0",
     "jade": "~1.11.0",
     "juice": "^4.2.3",
+    "memory-cache": "^0.2.0",
     "moment": "^2.21.0",
     "mongoose": "^5.0.7",
     "mongoose-mongodb-errors": "0.0.2",
