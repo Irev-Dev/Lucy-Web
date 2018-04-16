@@ -16,3 +16,14 @@ exports.responseCache = duration => (req, res, next ) => {
     next(); // pass on to get uncached response
   }
 };
+
+
+/* notes
+observation on zeit deployment
+  responseTimes 100-200ms faster then uncached alternative
+  greatly reduces database calls if server was underload
+
+observation on local deployment
+  responseTimes 500ms faster then unchached alternative
+
+*/
