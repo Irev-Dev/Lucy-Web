@@ -9,7 +9,13 @@ const mongoose = require('mongoose');
 
 const connectString = process.env.DATABASE + process.env.NODE_ENV;
 
-mongoose.connect(connectString, { dbName: process.env.DATABASE_NAME });
+mongoose.connect(connectString, {
+  dbName: process.env.DATABASE_NAME,
+  ssl: true, // encrypted connection to db
+  appname: 'lucy-web', // db logs will idenity lucy-web
+});
+
+
 mongoose.Promise = global.Promise; // Tell Mongoose to use ES6 promises
 mongoose.connection.on('error', (err) => {
   console.error(`🙅 🚫 🙅 🚫 🙅 🚫 🙅 🚫 → ${err.message}`);
