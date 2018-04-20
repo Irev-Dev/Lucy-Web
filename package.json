@@ -6,9 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch-server": "nodemon ./server/start.js --ignore public/",
-    "build-js": "parcel build -d server/client/dist server/client/client.js --public-url ./",
-    "build-css": "concurrently \"parcel build -d server/client/dist server/client/normalise.css --public-url ./\" \"parcel build -d server/client/dist server/client/style.css --public-url ./ \" ",
-    "build-html": "parcel build -d server/client/dist server/client/main.html --public-url ./",
+    "build-js": "parcel build server/client/client.js --out-dir server/client/dist  --public-url ./ --log-level 1",
+    "build-css": "concurrently \"parcel build server/client/normalise.css --out-dir server/client/dist  --public-url ./ --log-level 1 \" \"parcel build server/client/style.css --out-dir server/client/dist --public-url ./ --log-level 1 \" ",
+    "build-html": "parcel build server/client/main.html --out-dir server/client/dist --public-url ./ --log-level 1",
     "build": "concurrently \"npm run build-js\" \"npm run build-css\" ",
     "start": "node ./server/start.js",
     "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name",
@@ -49,6 +49,7 @@
     "html-to-text": "^4.0.0",
     "jade": "~1.11.0",
     "juice": "^4.2.3",
+    "memory-cache": "^0.2.0",
     "moment": "^2.21.0",
     "mongoose": "^5.0.7",
     "mongoose-mongodb-errors": "0.0.2",
@@ -66,6 +67,6 @@
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
-    "parcel-bundler": "^1.5.0"
+    "parcel-bundler": "^1.7.1"
   }
 }

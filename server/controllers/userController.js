@@ -110,21 +110,30 @@ exports.subscriptionChange = async (req, res) => {
   res.redirect('/');
 };
 
+function uncachedCountdown() {
+  return User.count();
+}
+
+/* removed this block of code as we are caching the full server responses now higher up
 function CachedCountDown() {
   let count = 1;
   let date = 0;
   this.getCount = async () => {
     if ((date + 10000) < Date.now()) {
       date = Date.now();
-      count = await User.count();
+      count = await uncachedCountdown();
     }
     return count;
   };
 }
 
 exports.cachedCountDown = new CachedCountDown();
+*/
+
+exports.uncachedCountdown = uncachedCountdown;
 
 exports.countDown = async (req, res) => {
-  const count = await this.cachedCountDown.getCount();
+  // const count = await this.cachedCountDown.getCount();
+  const count = await this.uncachedCountdown();
   res.json({ count, total: 300 });
 };
