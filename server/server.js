@@ -21,7 +21,7 @@ const { catchErrors } = require('./handlers/errorHandlers');
 const app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'client', 'views')); // pug files folder
+app.set('views', path.join(__dirname, 'views')); // pug files folder
 app.set('view engine', 'pug'); // we use the engine pug, mustache or EJS work great too
 
 // public files
