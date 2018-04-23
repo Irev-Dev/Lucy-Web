@@ -11,7 +11,7 @@ const connectString = process.env.DATABASE + process.env.NODE_ENV;
 
 mongoose.connect(connectString, {
   dbName: process.env.DATABASE_NAME,
-  ssl: true, // encrypted connection to db
+  ssl: process.env.NODE_ENV === 'production', // encrypted connection to db
   appname: 'lucy-web', // db logs will idenity lucy-web
 });
 

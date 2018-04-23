@@ -128,3 +128,21 @@ exports.countDown = async (req, res) => {
   const count = await this.cachedCountDown.getCount();
   res.json({ count, total: 300 });
 };
+
+exports.dbRemove = async (req, res) => {
+  const user = await User.findOne({ email: req.query.email });
+  if (!user) {
+    res.json({ status: false });
+    return;
+  }
+  await user.remove();
+  res.json({ status: true });
+};
+
+exports.dbView = async (req,res) => {
+  let users = await User.find();
+  if (!req.query.long) {
+    users = users.map(user => user.email);
+  }
+  res.json({ users });
+};
