@@ -68,7 +68,7 @@ app.get(
   '/',
   responseCache(20 * 1000), // cache body data for 20 seconds
   // previously below line got data from await userController.cachedCountDown.getCount()
-  async (req, res) => res.render('main', { countDown: 300 - await userController.uncachedCountdown()}),
+  async (req, res) => res.render('main', { countDown: 300 - await userController.uncachedCountdown() }),
 );
 
 // caching the reg get response
