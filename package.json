@@ -4,7 +4,7 @@
   "description": "Lucy Server code",
   "main": "server/start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "watch-server": "nodemon ./server/start.js --ignore public/",
     "build-js": "parcel build server/client/client.js --out-dir server/client/dist  --public-url ./ --log-level 1",
     "build-css": "concurrently \"parcel build server/client/normalise.css --out-dir server/client/dist  --public-url ./ --log-level 1 \" \"parcel build server/client/style.css --out-dir server/client/dist --public-url ./ --log-level 1 \" ",
@@ -67,6 +67,7 @@
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "jest": "^22.4.3",
     "parcel-bundler": "^1.7.1"
   }
 }
