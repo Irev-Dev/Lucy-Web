@@ -1,5 +1,3 @@
-import { TIMEOUT } from 'dns';
-
 const cacheHandlers = require('./cacheHandlers');
 
 
