@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const crypto = require('crypto');
 const mail = require('../handlers/mail');
 const moment = require('moment');
-
+// const path = require('path');
+// require('dotenv').config({ path: path.join('server', 'environment.env') });
 
 const User = mongoose.model('User');
 
@@ -130,6 +131,10 @@ exports.countDown = async (req, res) => {
 };
 
 exports.dbRemove = async (req, res) => {
+  if (req.query.secret !== process.env.DB_API_SECRET) {
+    res.json({ status: false });
+    return;
+  }
   const user = await User.findOne({ email: req.query.email });
   if (!user) {
     res.json({ status: false });
@@ -140,6 +145,10 @@ exports.dbRemove = async (req, res) => {
 };
 
 exports.dbView = async (req,res) => {
+  if (req.query.secret !== process.env.DB_API_SECRET) {
+    res.json({ users: '' });
+    return;
+  }
   let users = await User.find();
   if (!req.query.long) {
     users = users.map(user => user.email);
