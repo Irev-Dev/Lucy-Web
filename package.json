@@ -11,7 +11,7 @@
     "build-html": "parcel build -d server/client/dist server/client/main.html --public-url ./",
     "build": "concurrently \"npm run build-js\" \"npm run build-css\" ",
     "postmortem-build-html": "parcel build -d server/client/dist server/views/main.pug --public-url ./",
-    "postmortem-build": "npm run build && postmortem-build-html",
+    "postmortem-build": "npm run build && npm run postmortem-build-html",
     "start": "node ./server/start.js",
     "dev": "concurrently \"npm run watch-server\" \"npm run build\" --names \"💻,📦\" --prefix name",
     "db-edit": "node ./server/dbEdit.js"
