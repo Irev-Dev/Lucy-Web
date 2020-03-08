@@ -29,4 +29,4 @@ footerIcons.innerHTML = contentLib.flexicons();
   return null;
 });
 // set refreshing countdown from api
-contentLib.startCountDown();
+// contentLib.startCountDown();

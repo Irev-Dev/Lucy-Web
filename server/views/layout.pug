@@ -2,37 +2,36 @@ doctype html
 html
   head
     title Open Source Racing Drone: LucyKwad
-    link(rel='stylesheet', href='style.css')
+    link(rel='stylesheet', href='../client/dist/style.css')
     meta(name="description", content="LucyKwad is an open-source drone design in OpenSCAD, that brings a novel design aim to i>increase speed and prolong battery like for FPV mini-quads racing.")
     meta(name="keywords", content="drone,open-source,FPV,miniquad,mini-quad,multi-rotor,multirotor,racing,speed,battery")
     meta(name="google-site-verification",content="quEc09nsjbW4l7RpHjlncw8zBTFUbZIfOpMGg3h6Hz0")
     meta(name="viewport" content="width=device-width, initial-scale=1")
-    script(async, src=`https://www.googletagmanager.com/gtag/js?id=${locals.googleAnalyticsID}`)
-    script. 
-      window.dataLayer = window.dataLayer || []; 
-      function gtag(){
-        dataLayer.push(arguments);
-      } 
-      gtag('js', new Date()); 
-      gtag('config', '#{locals.googleAnalyticsID}');
+    //- script(async, src=`https://www.googletagmanager.com/gtag/js?id=${locals.googleAnalyticsID}`)
+    //- script. 
+    //-   window.dataLayer = window.dataLayer || []; 
+    //-   function gtag(){
+    //-     dataLayer.push(arguments);
+    //-   } 
+    //-   gtag('js', new Date()); 
+      //- gtag('config', '#{locals.googleAnalyticsID}');
 
   body
-
-    .logo
-      a(href="/")
-        include icon.svg
-
-    block messages
-      if locals.flashes
-        .inner
-          .flash-messages
-            - const categories = Object.keys(locals.flashes)
-            each category in categories
-              each message in flashes[category]
-                .flash(class=`flash--${category}`)
-                  .flash__text!= message
-                  button.flash__remove(onClick="this.parentElement.remove()") &times;
     
+    //- .logo
+    //-   a(href="/")
+    //-     include icon.svg
+
+    //- block messages
+    //-   if locals.flashes
+    //-     .inner
+    //-       .flash-messages
+    //-         - const categories = Object.keys(locals.flashes)
+    //-         each category in categories
+    //-           each message in flashes[category]
+    //-             .flash(class=`flash--${category}`)
+    //-               .flash__text!= message
+    //-               button.flash__remove(onClick="this.parentElement.remove()") &times;
     block content
 
-    script(src="client.js")
+    script(src="../client/dist/client.js")

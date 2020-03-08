@@ -5,6 +5,11 @@
   src: url(./HeavyEquipment.ttf);
 }
 
+.graveyard {
+  background-color: black;
+  text-align: center;
+}
+
 hr {
   width: 90%;
   max-width: 1200px;
