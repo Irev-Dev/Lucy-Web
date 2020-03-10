@@ -32,7 +32,7 @@
     ]
   },
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.18.1",
     "body-parser": "^1.18.3",
     "cloudinary": "^1.19.0",
     "cloudinary-core": "^2.8.1",
