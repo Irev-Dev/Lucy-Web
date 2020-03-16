@@ -78,6 +78,10 @@ app.post(
 
 app.get('/api/countdown', userController.countDown);
 
+app.get('/api/dbRemove', userController.dbRemove);
+
+app.get('/api/dbView', userController.dbView);
+
 app.get('/verify/:token', catchErrors(userController.verifyEmail));
 
 app.get('/subscription', catchErrors(userController.subscriptionChange));
