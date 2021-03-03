@@ -57,7 +57,7 @@
     "morgan": "^1.9.1",
     "nodemailer": "3.1.5",
     "nodemon": "^1.19.4",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "react": "^16.13.0",
     "serve-favicon": "~2.4.5",
     "validator": "^9.4.1"
