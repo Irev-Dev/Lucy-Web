@@ -55,7 +55,7 @@
     "mongoose": "^5.9.3",
     "mongoose-mongodb-errors": "0.0.2",
     "morgan": "^1.9.1",
-    "nodemailer": "3.1.5",
+    "nodemailer": "6.4.16",
     "nodemon": "^1.19.4",
     "pug": "^2.0.4",
     "react": "^16.13.0",
