@@ -60,7 +60,7 @@
     "pug": "^2.0.4",
     "react": "^16.13.0",
     "serve-favicon": "~2.4.5",
-    "validator": "^9.4.1"
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "babel": "^6.23.0",
